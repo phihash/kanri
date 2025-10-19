@@ -4,7 +4,7 @@ import SwiftUI
 struct hitokanriApp: App {
     var body: some Scene {
         WindowGroup {
-            
+            Content()
         }
     }
 }
