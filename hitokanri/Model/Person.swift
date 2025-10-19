@@ -1,8 +1,17 @@
 import Foundation
 import SwiftData
 
-struct Person: Identifiable, Codable {
-    var id: String = UUID().uuidString
+@Model
+class Person{
+    init(name: String,furigana: String? = nil,nickname: String? = nil){
+        self.name = name
+        if let furigana = furigana{
+            self.furigana = furigana
+        }
+        if let nickname = nickname{
+            self.nickname = nickname
+        }
+    }
 
     // 基本情報（必須1つのみ）
     var name: String                     // 必須

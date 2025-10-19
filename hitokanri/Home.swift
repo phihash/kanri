@@ -1,15 +1,30 @@
 import SwiftUI
+import SwiftData
 
 struct Home: View {
     @State private var mode : String = "list"
+    @Query private var persons: [Person]
+    @Environment(\.modelContext) private var modelContext
     var body: some View {
         NavigationStack{
             ScrollView{
                 
                 if mode == "list"{
-                    ListSection()
+                    ForEach(persons){ person in
+                        ListSection(personName: person.name)
+                    }
+                    Button("臨時"){
+                        let person = Person(name: "temporaty data")
+                        modelContext.insert(person)
+                    }
                 }else{
-                    SquareSection()
+                    ForEach(persons){ person in
+                        SquareSection(personName: person.name)
+                    }
+                    Button("臨時"){
+                        let person = Person(name: "temporaty data")
+                        modelContext.insert(person)
+                    }
                 }
                 
             }
@@ -38,6 +53,7 @@ struct Home: View {
 }
 
 struct ListSection : View {
+    @State var personName : String
     var body : some View {
         HStack{
             Circle()
@@ -49,7 +65,7 @@ struct ListSection : View {
                 }
             
             VStack(alignment: .leading,spacing: 12){
-                Text("吉澤要人")
+                Text(personName)
                     .font(.custom("HiraginoSans-W6", size: 20))
                 Text("吉澤要人")
                     .font(.custom("HiraginoSans-W6", size: 12))
@@ -66,6 +82,7 @@ struct ListSection : View {
 }
 
 struct SquareSection : View {
+    @State var personName : String
     var body: some View {
         VStack(spacing: 12){
             Circle()
