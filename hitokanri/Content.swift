@@ -9,7 +9,7 @@ struct Content: View {
                 if #available(iOS 18 , *) {
                     TabView(selection: $activeTab){
                         Tab.init(value: .home){
-                            ListView()
+                            Home()
                                 .toolbarVisibility(.hidden, for: .tabBar)
                         }
                         Tab.init(value: .search){
@@ -23,7 +23,7 @@ struct Content: View {
                     }
                 } else{
                     TabView(selection: $activeTab){
-                        ListView()
+                        Home()
                             .tag(TabModel.home)
                             .background{
                                 if !isTabBarHidden{
