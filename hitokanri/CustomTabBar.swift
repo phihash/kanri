@@ -3,7 +3,7 @@ import SwiftUI
 struct CustomTabBar: View {
     @Binding var activeTab : TabModel
     var activeForeground : Color = .white
-    var activeBackground : Color = .blue
+    var activeBackground : Color = .black.opacity(0.9)
     var body: some View {
         HStack(spacing:8){
             ForEach(TabModel.allCases, id: \.self){ tab in
@@ -21,7 +21,7 @@ struct CustomTabBar: View {
                                 .font(.headline)
                                 .fontWeight(.semibold)
                                 .font(.custom("HiraginoSans-W6", size:14))
-
+                            
                         }
                     }
                     .foregroundStyle(activeTab == tab ? activeForeground  : .gray)
@@ -32,14 +32,16 @@ struct CustomTabBar: View {
                     .background{
                         if activeTab == tab{
                             Capsule()
-                                .fill(activeBackground.gradient)
+                                .fill(activeBackground)
                         }
                     }
                     
                 }
             }
         }
-        .padding(.bottom,18)
+        .padding(.top,12)
+        .padding(.horizontal,12)
+        .cornerRadius(20)
         .animation(.smooth(duration: 0.3,extraBounce: 0),value:activeTab)
     }
 }

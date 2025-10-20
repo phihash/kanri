@@ -5,30 +5,32 @@ struct Home: View {
     @State private var mode : String = "list"
     @Query private var persons: [Person]
     @Environment(\.modelContext) private var modelContext
+    let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     var body: some View {
         NavigationStack{
-            ScrollView{
+            ScrollView(showsIndicators: false){
                 
                 if mode == "list"{
                     ForEach(persons){ person in
-                        ListSection(personName: person.name)
+                        NavigationLink(destination:DetailView(person: person)){
+                            ListSection(personName: person.name)
+                        }
                     }
-                    Button("臨時"){
-                        let person = Person(name: "temporaty data")
-                        modelContext.insert(person)
-                    }
+                    
                 }else{
-                    ForEach(persons){ person in
-                        SquareSection(personName: person.name)
+                    LazyVGrid(columns: columns){
+                        ForEach(persons){ person in
+                            NavigationLink(destination:DetailView(person: person)){
+                                SquareSection(personName: person.name)
+                            }
+                        }
                     }
-                    Button("臨時"){
-                        let person = Person(name: "temporaty data")
-                        modelContext.insert(person)
-                    }
+                    .padding(.horizontal,18)
+                    
                 }
                 
             }
-            .padding(.top,24)
+            .padding(.vertical,24)
             .navigationTitle(Text("一覧"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
@@ -92,10 +94,10 @@ struct SquareSection : View {
                     Image(systemName: "person")
                         .font(.title)
                 }
-            Text("吉澤要人")
-                .font(.custom("HiraginoSans-W6", size: 16))
+            Text(personName)
+                .font(.custom("HiraginoSans-W6", size: 12))
         }
-        .padding(.horizontal,18)
+        .padding(.horizontal,6)
         .padding(.vertical,12)
         .background(Color.black.opacity(0.1))
         .cornerRadius(12)

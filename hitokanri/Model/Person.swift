@@ -42,6 +42,7 @@ class Person{
 //    // その他
 //    var notes: String?                  // 備考・メモ
 //
+//     var favorite : Bool = false
 //    // 将来的拡張用
 //    var tags: [String]?                 // カスタムタグ・分類
 }

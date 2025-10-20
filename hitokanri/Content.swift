@@ -3,6 +3,7 @@ import SwiftUI
 struct Content: View {
     @State private var activeTab: TabModel = .home
     @State private var isTabBarHidden : Bool = false
+    @State private var isKeyboardVisible: Bool = false
     var body: some View {
         ZStack(alignment: .bottom){
             Group{
@@ -13,7 +14,7 @@ struct Content: View {
                                 .toolbarVisibility(.hidden, for: .tabBar)
                         }
                         Tab.init(value: .search){
-                            Text("Search")
+                            Add()
                                 .toolbarVisibility(.hidden, for: .tabBar)
                         }
                         Tab.init(value: .settings){
@@ -33,7 +34,7 @@ struct Content: View {
                                 }
                             }
                         
-                        Text("search")
+                        Add()
                             .tag(TabModel.search)
                         
                         
@@ -43,7 +44,18 @@ struct Content: View {
                     }
                 }
             }
-            CustomTabBar(activeTab:$activeTab)
+
+            if !isKeyboardVisible {
+                CustomTabBar(activeTab:$activeTab)
+            }
+        }
+        .onAppear {
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { _ in
+                isKeyboardVisible = true
+            }
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
+                isKeyboardVisible = false
+            }
         }
     }
 }

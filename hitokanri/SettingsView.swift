@@ -3,9 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     var body: some View {
         NavigationStack{
-            ScrollView{
-                Text("設定")
-            }
+            Text("a")
             .navigationTitle(Text("設定"))
             .navigationBarTitleDisplayMode(.inline)
         }
