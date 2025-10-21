@@ -12,7 +12,7 @@ struct Add: View {
                 .padding()
                 .border(Color.gray)
                 .padding()
-            Button("臨時"){
+            Button("作成"){
                 if inputName.isEmpty {
                     return
                 }
