@@ -10,23 +10,38 @@ struct Home: View {
         NavigationStack{
             ScrollView(showsIndicators: false){
                 
-                if mode == "list"{
-                    ForEach(persons){ person in
-                        NavigationLink(destination:DetailView(person: person)){
-                            ListSection(personName: person.name)
-                        }
-                    }
+                if persons.isEmpty {
                     
-                }else{
-                    LazyVGrid(columns: columns){
+                    VStack(spacing: 16){
+                        Image(systemName: "person.slash")
+                            .font(.system(size: 60))
+                            .foregroundColor(.gray)
+                        Text("データがありません")
+                            .font(.title3)
+                    }
+                    .padding(.top, 200)
+                    
+                    
+                    
+                } else{
+                    if mode == "list"{
                         ForEach(persons){ person in
                             NavigationLink(destination:DetailView(person: person)){
-                                SquareSection(personName: person.name)
+                                ListSection(person: person)
                             }
                         }
+                        
+                    }else{
+                        LazyVGrid(columns: columns){
+                            ForEach(persons){ person in
+                                NavigationLink(destination:DetailView(person: person)){
+                                    SquareSection(person: person)
+                                }
+                            }
+                        }
+                        .padding(.horizontal,18)
+                        
                     }
-                    .padding(.horizontal,18)
-                    
                 }
                 
             }
@@ -55,7 +70,7 @@ struct Home: View {
 }
 
 struct ListSection : View {
-    @State var personName : String
+    let person: Person
     var body : some View {
         HStack{
             Circle()
@@ -67,10 +82,10 @@ struct ListSection : View {
                 }
             
             VStack(alignment: .leading,spacing: 12){
-                Text(personName)
+                Text(person.name)
                     .font(.custom("HiraginoSans-W6", size: 20))
-                Text("吉澤要人")
-                    .font(.custom("HiraginoSans-W6", size: 12))
+                //                Text("吉澤要人")
+                //                    .font(.custom("HiraginoSans-W6", size: 12))
             }
             .padding(.leading,8)
             Spacer()
@@ -84,7 +99,7 @@ struct ListSection : View {
 }
 
 struct SquareSection : View {
-    @State var personName : String
+    let person: Person
     var body: some View {
         VStack(spacing: 12){
             Circle()
@@ -94,14 +109,12 @@ struct SquareSection : View {
                     Image(systemName: "person")
                         .font(.title)
                 }
-            Text(personName)
+            Text(person.name)
                 .font(.custom("HiraginoSans-W6", size: 12))
         }
-        .padding(.horizontal,6)
+        .padding(.horizontal,8)
         .padding(.vertical,12)
-        .background(Color.black.opacity(0.1))
         .cornerRadius(12)
-        .padding(.horizontal,12)
     }
 }
 
