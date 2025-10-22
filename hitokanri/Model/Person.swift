@@ -3,13 +3,16 @@ import SwiftData
 
 @Model
 class Person{
-    init(name: String,furigana: String? = nil,nickname: String? = nil){
+    init(name: String,furigana: String? = nil,nickname: String? = nil,relationship: String? = nil){
         self.name = name
         if let furigana = furigana{
             self.furigana = furigana
         }
         if let nickname = nickname{
             self.nickname = nickname
+        }
+        if let relationship = relationship{
+            self.relationship = relationship
         }
     }
 
@@ -27,7 +30,7 @@ class Person{
 //    var occupation: String?             // 職業
 //
 //    // 関係性など
-//    var relationship: String?           // 友人 / 家族 / 同僚 / 推し など自由入力
+    var relationship: String?           // 友人 / 家族 / 同僚 / 推し など自由入力
 //    var metCount: Int?                  // 会った回数
 //
 //    // 連絡先

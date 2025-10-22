@@ -24,6 +24,37 @@ struct DetailView: View {
                 } else {
                     Text(person.name)
                 }
+              
+        
+                
+                
+                Text("名前")
+                if isEditing{
+                    TextField(person.name, text: $person.name)
+                        .font(.title3)
+                        .padding()
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(8)
+                        .padding(.horizontal, 24)
+                        .focused($isFocused)
+
+                } else {
+                    Text(person.name)
+                }
+                
+                Text("名前")
+                if isEditing{
+                    TextField(person.name, text: $person.name)
+                        .font(.title3)
+                        .padding()
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(8)
+                        .padding(.horizontal, 24)
+                        .focused($isFocused)
+
+                } else {
+                    Text(person.name)
+                }
             }
                 .navigationTitle(person.name)
                 .navigationBarTitleDisplayMode(.inline)
