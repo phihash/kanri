@@ -81,11 +81,14 @@ struct ListSection : View {
                         .font(.title)
                 }
             
-            VStack(alignment: .leading,spacing: 12){
+            VStack(alignment: .leading,spacing: 6){
                 Text(person.name)
                     .font(.custom("HiraginoSans-W6", size: 20))
-                //                Text("吉澤要人")
-                //                    .font(.custom("HiraginoSans-W6", size: 12))
+                if let relationship = person.relationship, !relationship.isEmpty {
+                    Text(relationship)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
             }
             .padding(.leading,8)
             Spacer()
@@ -111,6 +114,12 @@ struct SquareSection : View {
                 }
             Text(person.name)
                 .font(.custom("HiraginoSans-W6", size: 12))
+            if let relationship = person.relationship, !relationship.isEmpty {
+                Text(relationship)
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+            }
         }
         .padding(.horizontal,8)
         .padding(.vertical,12)

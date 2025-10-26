@@ -10,101 +10,123 @@ struct DetailView: View {
     @FocusState private var isFocused: Bool
     var body: some View {
         NavigationStack{
-            VStack{
-                Text("名前")
-                if isEditing{
-                    TextField(person.name, text: $person.name)
-                        .font(.title3)
-                        .padding()
-                        .background(Color.gray.opacity(0.1))
-                        .cornerRadius(8)
-                        .padding(.horizontal, 24)
-                        .focused($isFocused)
-
-                } else {
-                    Text(person.name)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    editableField(label: "名前", text: $person.name, showDashWhenEmpty: false)
+                    
+                    editableField(
+                        label: "ふりがな",
+                        text: Binding(
+                            get: { person.furigana ?? "" },
+                            set: { person.furigana = $0.isEmpty ? nil : $0 }
+                        )
+                    )
+                    
+                    editableField(
+                        label: "ニックネーム",
+                        text: Binding(
+                            get: { person.nickname ?? "" },
+                            set: { person.nickname = $0.isEmpty ? nil : $0 }
+                        )
+                    )
+                    
+                    editableField(
+                        label: "住所",
+                        text: Binding(
+                            get: { person.address ?? "" },
+                            set: { person.address = $0.isEmpty ? nil : $0 }
+                        )
+                    )
+                    
+                    editableField(
+                        label: "職業",
+                        text: Binding(
+                            get: { person.occupation ?? "" },
+                            set: { person.occupation = $0.isEmpty ? nil : $0 }
+                        )
+                    )
+                    
+                    editableField(
+                        label: "関係性",
+                        text: Binding(
+                            get: { person.relationship ?? "" },
+                            set: { person.relationship = $0.isEmpty ? nil : $0 }
+                        )
+                    )
                 }
-              
-        
-                
-                
-                Text("名前")
-                if isEditing{
-                    TextField(person.name, text: $person.name)
-                        .font(.title3)
-                        .padding()
-                        .background(Color.gray.opacity(0.1))
-                        .cornerRadius(8)
-                        .padding(.horizontal, 24)
-                        .focused($isFocused)
-
-                } else {
-                    Text(person.name)
-                }
-                
-                Text("名前")
-                if isEditing{
-                    TextField(person.name, text: $person.name)
-                        .font(.title3)
-                        .padding()
-                        .background(Color.gray.opacity(0.1))
-                        .cornerRadius(8)
-                        .padding(.horizontal, 24)
-                        .focused($isFocused)
-
-                } else {
-                    Text(person.name)
-                }
+                .padding(.horizontal, 24)
+                .padding(.vertical, 16)
             }
-                .navigationTitle(person.name)
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar{
-                    ToolbarItem(placement: .topBarTrailing) {
-                        HStack{
-                            if isEditing {
-                                Button {
-                                    try? modelContext.save()
-                                    isEditing = false
-                                } label : {
-                                    Text("保存")
-                                }
-                            } else {
-                                Button {
-                                    isEditing = true
-                                } label : {
-                                    Image("edit")
-                                }
-                            }
-
+            .navigationTitle(person.name)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar{
+                ToolbarItem(placement: .topBarTrailing) {
+                    HStack{
+                        if isEditing {
                             Button {
-                                isDeleteDialog = true
+                                try? modelContext.save()
+                                isEditing = false
                             } label : {
-                                Image("delete")
+                                Text("保存")
                             }
-
+                        } else {
+                            Button {
+                                isEditing = true
+                            } label : {
+                                Image("edit")
+                            }
+                        }
+                        
+                        Button {
+                            isDeleteDialog = true
+                        } label : {
+                            Image("delete")
                         }
                         
                     }
+                    
                 }
-                .alert("\(person.name)さんのデータ削除",isPresented: $isDeleteDialog) {
-                    Button("キャンセル") {
-                        isDeleteDialog = false
-                    }
-                    Button("OK") {
-                        modelContext.delete(person)
-                        dismiss()
-                    }
-                } message: {
-                    Text("本当にプロフィールを削除しますか")
+            }
+            .alert("\(person.name)さんのデータ削除",isPresented: $isDeleteDialog) {
+                Button("キャンセル") {
+                    isDeleteDialog = false
                 }
-                .toolbar {
-                    ToolbarItemGroup(placement: .keyboard) {
-                        Spacer()
-                        Button("閉じる") {
-                            isFocused = false
-                        }
+                Button("OK") {
+                    modelContext.delete(person)
+                    dismiss()
+                }
+            } message: {
+                Text("本当にプロフィールを削除しますか")
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("閉じる") {
+                        isFocused = false
                     }
                 }
+            }
+        }
+    }
+}
+
+private extension DetailView {
+    @ViewBuilder
+    func editableField(label: String, text: Binding<String>, showDashWhenEmpty: Bool = true) -> some View {
+        Text(label)
+            .font(.headline)
+            .foregroundStyle(.secondary)
+        if isEditing {
+            TextField(label, text: text)
+                .font(.title3)
+                .padding()
+                .background(Color.gray.opacity(0.1))
+                .cornerRadius(8)
+                .focused($isFocused)
+        } else {
+            let value = text.wrappedValue
+            Text((value.isEmpty && showDashWhenEmpty) ? "-" : value)
+                .font(.title3)
         }
     }
 }
