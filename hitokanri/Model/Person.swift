@@ -9,6 +9,7 @@ class Person{
          relationship: String? = nil,
          address: String? = nil,
          occupation: String? = nil,
+         bloodType : String? = nil,
          favorite: Bool = false){
         self.name = name
         if let furigana = furigana{
@@ -26,6 +27,9 @@ class Person{
         if let occupation = occupation {
             self.occupation = occupation
         }
+        if let bloodType = bloodType {
+            self.bloodType = bloodType
+        }
         self.favorite = favorite
     }
     
@@ -36,12 +40,13 @@ class Person{
     var relationship: String?           // 友人 / 家族 / 同僚 / 推し など自由入力
     var address: String?                // 住所
     var occupation: String?             // 職業
+    var bloodType: String?              // 血液型
     var favorite: Bool = false
     
 
     //    var genderStyle: String?            // 性別・ジェンダースタイル・未設定可
     //    var birthday: Date?                 // 誕生日
-    //    var bloodType: String?              // 血液型
+
     //    var birthplace: String?             // 出身地
     
     

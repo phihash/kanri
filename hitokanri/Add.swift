@@ -16,20 +16,15 @@ struct Add: View {
         NavigationStack {
             ScrollView{
                 HStack{
-                    Text("名前")
-                    Text("必須")
-                        .font(.caption)
-                    TextField("名前を入力してください", text: $inputName)
-                        .font(.title3)
-                        .padding(16)
+                    TextField("名前を入力",text: $inputName,axis:.vertical)
+                        .font(.system(size: 30, weight: .bold))   // LargeTitle相当
                         .textFieldStyle(.plain)
-                        .overlay(
-                            Rectangle()
-                                .frame(height: 2)
-                                .padding(.horizontal,16)
-                                .foregroundColor(.gray.opacity(0.3)),
-                            alignment: .bottom
-                        )
+                        .lineLimit(1)
+                        .submitLabel(.done)
+                        .padding(12)
+                    
+//                        .textContentType(.organizationName)
+
                 }
                 HStack{
                     Text("ふりがな")
@@ -136,12 +131,12 @@ struct Add: View {
             }
             .padding(.horizontal)
             .alert("入力エラー", isPresented: $isAlert) {
-                  Button("OK") { }
-              } message: {
-                  Text("名前は必須項目です")
-              }
-
-
+                Button("OK") { }
+            } message: {
+                Text("名前は必須項目です")
+            }
+            
+            
             .navigationTitle(Text("新規作成"))
             .navigationBarTitleDisplayMode(.inline)
         }
