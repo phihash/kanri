@@ -1,6 +1,15 @@
 import SwiftUI
 import SwiftData
 
+enum Field : Hashable {
+    case name
+    case furigana
+    case nickName
+    case relationship
+    case address
+    case occupation
+}
+
 struct Add: View {
     @Query private var persons: [Person]
     @Environment(\.modelContext) private var modelContext
@@ -12,6 +21,7 @@ struct Add: View {
     @State var occupation = ""
     @State var favorite = false
     @State private var isAlert : Bool = false
+    @FocusState private var focusField: Field?
     var body: some View {
         NavigationStack {
             ScrollView{
@@ -22,9 +32,13 @@ struct Add: View {
                         .lineLimit(1)
                         .submitLabel(.done)
                         .padding(12)
+                        .focused($focusField, equals: .name)
+                        .onSubmit {
+                            focusField = nil
+                        }
                     
-//                        .textContentType(.organizationName)
-
+                    //                        .textContentType(.organizationName)
+                    
                 }
                 HStack{
                     Text("ふりがな")
@@ -39,6 +53,7 @@ struct Add: View {
                                 .foregroundColor(.gray.opacity(0.3)),
                             alignment: .bottom
                         )
+                        .focused($focusField, equals: .furigana)
                 }
                 HStack{
                     Text("ニックネーム")
@@ -53,6 +68,7 @@ struct Add: View {
                                 .foregroundColor(.gray.opacity(0.3)),
                             alignment: .bottom
                         )
+                        .focused($focusField, equals: .nickName)
                 }
                 HStack{
                     Text("関係性")
@@ -67,6 +83,7 @@ struct Add: View {
                                 .foregroundColor(.gray.opacity(0.3)),
                             alignment: .bottom
                         )
+                        .focused($focusField, equals: .relationship)
                 }
                 HStack{
                     Text("住所")
@@ -81,6 +98,7 @@ struct Add: View {
                                 .foregroundColor(.gray.opacity(0.3)),
                             alignment: .bottom
                         )
+                        .focused($focusField, equals: .address)
                 }
                 HStack{
                     Text("職業")
@@ -95,6 +113,7 @@ struct Add: View {
                                 .foregroundColor(.gray.opacity(0.3)),
                             alignment: .bottom
                         )
+                        .focused($focusField, equals: .occupation)
                 }
                 Toggle(isOn: $favorite) {
                     Text("お気に入り")
@@ -130,15 +149,33 @@ struct Add: View {
                 
             }
             .padding(.horizontal)
+            .onAppear{
+                focusField = .name
+            }
+            .onTapGesture {
+                focusField = nil
+            }
             .alert("入力エラー", isPresented: $isAlert) {
                 Button("OK") { }
             } message: {
                 Text("名前は必須項目です")
             }
             
-            
+           
             .navigationTitle(Text("新規作成"))
             .navigationBarTitleDisplayMode(.inline)
         }
+        .toolbar{
+            ToolbarItemGroup(placement: .keyboard){
+                
+                Spacer()
+                Button("閉じる"){
+                    focusField = nil
+                
+                }
+                
+            }
+        }
+        
     }
 }
