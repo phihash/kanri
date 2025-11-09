@@ -13,14 +13,11 @@
 		A9E25D282EC0C8C1004C9397 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D162EC0C8C1004C9397 /* Content.swift */; };
 		A9E25D292EC0C8C1004C9397 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D172EC0C8C1004C9397 /* CustomTabBar.swift */; };
 		A9E25D2A2EC0C8C1004C9397 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D182EC0C8C1004C9397 /* DetailView.swift */; };
-		A9E25D2B2EC0C8C1004C9397 /* hitokanriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D1D2EC0C8C1004C9397 /* hitokanriApp.swift */; };
 		A9E25D2C2EC0C8C1004C9397 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D1E2EC0C8C1004C9397 /* Home.swift */; };
 		A9E25D2D2EC0C8C1004C9397 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D1F2EC0C8C1004C9397 /* MailView.swift */; };
 		A9E25D2E2EC0C8C1004C9397 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D202EC0C8C1004C9397 /* SettingsView.swift */; };
 		A9E25D2F2EC0C8C1004C9397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D152EC0C8C1004C9397 /* Assets.xcassets */; };
-		A9E25D302EC0C8C1004C9397 /* distance_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D192EC0C8C1004C9397 /* distance_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */; };
-		A9E25D312EC0C8C1004C9397 /* edit.svg in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D1A2EC0C8C1004C9397 /* edit.svg */; };
-		A9E25D322EC0C8C1004C9397 /* graph_5_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D1B2EC0C8C1004C9397 /* graph_5_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */; };
+		A9E25D3B2EC0C983004C9397 /* hitokanriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D392EC0C983004C9397 /* hitokanriApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,14 +29,11 @@
 		A9E25D162EC0C8C1004C9397 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		A9E25D172EC0C8C1004C9397 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		A9E25D182EC0C8C1004C9397 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		A9E25D192EC0C8C1004C9397 /* distance_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = distance_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg; sourceTree = "<group>"; };
-		A9E25D1A2EC0C8C1004C9397 /* edit.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = edit.svg; sourceTree = "<group>"; };
-		A9E25D1B2EC0C8C1004C9397 /* graph_5_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = graph_5_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg; sourceTree = "<group>"; };
 		A9E25D1C2EC0C8C1004C9397 /* hitokanri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hitokanri.entitlements; sourceTree = "<group>"; };
-		A9E25D1D2EC0C8C1004C9397 /* hitokanriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitokanriApp.swift; sourceTree = "<group>"; };
 		A9E25D1E2EC0C8C1004C9397 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		A9E25D1F2EC0C8C1004C9397 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		A9E25D202EC0C8C1004C9397 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A9E25D392EC0C983004C9397 /* hitokanriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitokanriApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				A9E25D112EC0C8C1004C9397 /* Person.swift */,
-				A9E25D122EC0C8C1004C9397 /* Tab.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -81,22 +74,44 @@
 		A9E25D242EC0C8C1004C9397 /* hitokanri */ = {
 			isa = PBXGroup;
 			children = (
+				A9E25D3A2EC0C983004C9397 /* Apps */,
+				A9E25D3F2EC0C9AE004C9397 /* Views */,
 				A9E25D132EC0C8C1004C9397 /* Model */,
-				A9E25D142EC0C8C1004C9397 /* Add.swift */,
 				A9E25D152EC0C8C1004C9397 /* Assets.xcassets */,
-				A9E25D162EC0C8C1004C9397 /* Content.swift */,
-				A9E25D172EC0C8C1004C9397 /* CustomTabBar.swift */,
-				A9E25D182EC0C8C1004C9397 /* DetailView.swift */,
-				A9E25D192EC0C8C1004C9397 /* distance_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */,
-				A9E25D1A2EC0C8C1004C9397 /* edit.svg */,
-				A9E25D1B2EC0C8C1004C9397 /* graph_5_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */,
 				A9E25D1C2EC0C8C1004C9397 /* hitokanri.entitlements */,
-				A9E25D1D2EC0C8C1004C9397 /* hitokanriApp.swift */,
+			);
+			path = hitokanri;
+			sourceTree = "<group>";
+		};
+		A9E25D3A2EC0C983004C9397 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				A9E25D392EC0C983004C9397 /* hitokanriApp.swift */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		A9E25D3D2EC0C98E004C9397 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				A9E25D172EC0C8C1004C9397 /* CustomTabBar.swift */,
+				A9E25D122EC0C8C1004C9397 /* Tab.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		A9E25D3F2EC0C9AE004C9397 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9E25D3D2EC0C98E004C9397 /* Tab */,
+				A9E25D162EC0C8C1004C9397 /* Content.swift */,
 				A9E25D1E2EC0C8C1004C9397 /* Home.swift */,
 				A9E25D1F2EC0C8C1004C9397 /* MailView.swift */,
 				A9E25D202EC0C8C1004C9397 /* SettingsView.swift */,
+				A9E25D182EC0C8C1004C9397 /* DetailView.swift */,
+				A9E25D142EC0C8C1004C9397 /* Add.swift */,
 			);
-			path = hitokanri;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,9 +175,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9E25D2F2EC0C8C1004C9397 /* Assets.xcassets in Resources */,
-				A9E25D302EC0C8C1004C9397 /* distance_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg in Resources */,
-				A9E25D312EC0C8C1004C9397 /* edit.svg in Resources */,
-				A9E25D322EC0C8C1004C9397 /* graph_5_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,8 +191,8 @@
 				A9E25D282EC0C8C1004C9397 /* Content.swift in Sources */,
 				A9E25D292EC0C8C1004C9397 /* CustomTabBar.swift in Sources */,
 				A9E25D2A2EC0C8C1004C9397 /* DetailView.swift in Sources */,
-				A9E25D2B2EC0C8C1004C9397 /* hitokanriApp.swift in Sources */,
 				A9E25D2C2EC0C8C1004C9397 /* Home.swift in Sources */,
+				A9E25D3B2EC0C983004C9397 /* hitokanriApp.swift in Sources */,
 				A9E25D2D2EC0C8C1004C9397 /* MailView.swift in Sources */,
 				A9E25D2E2EC0C8C1004C9397 /* SettingsView.swift in Sources */,
 			);
