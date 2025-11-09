@@ -4,20 +4,13 @@ import SwiftData
 @Model
 class Person{
     init(name: String,
-         furigana: String? = nil,
-         nickname: String? = nil,
          relationship: String? = nil,
          address: String? = nil,
          occupation: String? = nil,
+         birthplace: String? = nil,
          bloodType : String? = nil,
          favorite: Bool = false){
         self.name = name
-        if let furigana = furigana{
-            self.furigana = furigana
-        }
-        if let nickname = nickname{
-            self.nickname = nickname
-        }
         if let relationship = relationship {
             self.relationship = relationship
         }
@@ -27,32 +20,29 @@ class Person{
         if let occupation = occupation {
             self.occupation = occupation
         }
-        if let bloodType = bloodType {
-            self.bloodType = bloodType
+        if let birthplace = birthplace {
+            self.birthplace = birthplace
         }
+    
         self.favorite = favorite
     }
     
     // 基本情報（必須1つのみ）
     var name: String                     // 必須
-    var furigana: String?               // フリガナ（任意）
-    var nickname: String?               // ニックネーム
     var relationship: String?           // 友人 / 家族 / 同僚 / 推し など自由入力
     var address: String?                // 住所
     var occupation: String?             // 職業
-    var bloodType: String?              // 血液型
     var favorite: Bool = false
     
 
     //    var genderStyle: String?            // 性別・ジェンダースタイル・未設定可
     //    var birthday: Date?                 // 誕生日
 
-    //    var birthplace: String?             // 出身地
+        var birthplace: String?             // 出身地
     
     
     //
     
-    //    var metCount: Int?                  // 会った回数
     //
     //    // 連絡先
     //    var phoneNumber: String?

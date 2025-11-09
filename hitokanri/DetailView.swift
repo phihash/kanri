@@ -15,22 +15,6 @@ struct DetailView: View {
                     editableField(label: "名前", text: $person.name, showDashWhenEmpty: false)
                     
                     editableField(
-                        label: "ふりがな",
-                        text: Binding(
-                            get: { person.furigana ?? "" },
-                            set: { person.furigana = $0.isEmpty ? nil : $0 }
-                        )
-                    )
-                    
-                    editableField(
-                        label: "ニックネーム",
-                        text: Binding(
-                            get: { person.nickname ?? "" },
-                            set: { person.nickname = $0.isEmpty ? nil : $0 }
-                        )
-                    )
-                    
-                    editableField(
                         label: "住所",
                         text: Binding(
                             get: { person.address ?? "" },
@@ -43,6 +27,14 @@ struct DetailView: View {
                         text: Binding(
                             get: { person.occupation ?? "" },
                             set: { person.occupation = $0.isEmpty ? nil : $0 }
+                        )
+                    )
+                    
+                    editableField(
+                        label: "出身地",
+                        text: Binding(
+                            get: { person.birthplace ?? "" },
+                            set: { person.birthplace = $0.isEmpty ? nil : $0 }
                         )
                     )
                     

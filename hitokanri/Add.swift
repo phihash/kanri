@@ -3,33 +3,30 @@ import SwiftData
 
 enum Field : Hashable {
     case name
-    case furigana
-    case nickName
     case relationship
     case address
     case occupation
+    case birthplace
 }
 
 struct Add: View {
     @Query private var persons: [Person]
     @Environment(\.modelContext) private var modelContext
     @State var inputName = ""
-    @State var furigana = ""
-    @State var nickName = ""
     @State var relationship = ""
     @State var address = ""
     @State var occupation = ""
+    @State var birthplace = ""
     @State var favorite = false
     @State private var isAlert : Bool = false
     @FocusState private var focusField: Field?
     var body: some View {
         NavigationStack {
-            ScrollView{
+            ScrollView(showsIndicators: false){
                 HStack{
-                    TextField("名前を入力",text: $inputName,axis:.vertical)
+                    TextField("名前を入力",text: $inputName)
                         .font(.system(size: 30, weight: .bold))   // LargeTitle相当
                         .textFieldStyle(.plain)
-                        .lineLimit(1)
                         .submitLabel(.done)
                         .padding(12)
                         .focused($focusField, equals: .name)
@@ -41,82 +38,54 @@ struct Add: View {
                     
                 }
                 HStack{
-                    Text("ふりがな")
-                    TextField("名前を入力してください", text: $furigana)
+                    Image("relationship")
+                        .renderingMode(.template)
+                    TextField("(例) 友人  尊敬する人 推し etc", text: $relationship)
                         .font(.headline)
                         .padding(16)
                         .textFieldStyle(.plain)
-                        .overlay(
-                            Rectangle()
-                                .frame(height: 2)
-                                .padding(.horizontal,16)
-                                .foregroundColor(.gray.opacity(0.3)),
-                            alignment: .bottom
-                        )
-                        .focused($focusField, equals: .furigana)
-                }
-                HStack{
-                    Text("ニックネーム")
-                    TextField("名前を入力してください", text: $nickName)
-                        .font(.headline)
-                        .padding(16)
-                        .textFieldStyle(.plain)
-                        .overlay(
-                            Rectangle()
-                                .frame(height: 2)
-                                .padding(.horizontal,16)
-                                .foregroundColor(.gray.opacity(0.3)),
-                            alignment: .bottom
-                        )
-                        .focused($focusField, equals: .nickName)
-                }
-                HStack{
-                    Text("関係性")
-                    TextField("名前を入力してください", text: $relationship)
-                        .font(.headline)
-                        .padding(16)
-                        .textFieldStyle(.plain)
-                        .overlay(
-                            Rectangle()
-                                .frame(height: 2)
-                                .padding(.horizontal,16)
-                                .foregroundColor(.gray.opacity(0.3)),
-                            alignment: .bottom
-                        )
+                        
                         .focused($focusField, equals: .relationship)
                 }
                 HStack{
-                    Text("住所")
-                    TextField("住所を入力してください", text: $address)
+                    Image("address")
+                        .renderingMode(.template)
+                    TextField("住所を入力", text: $address)
                         .font(.headline)
                         .padding(16)
                         .textFieldStyle(.plain)
-                        .overlay(
-                            Rectangle()
-                                .frame(height: 2)
-                                .padding(.horizontal,16)
-                                .foregroundColor(.gray.opacity(0.3)),
-                            alignment: .bottom
-                        )
+                        
                         .focused($focusField, equals: .address)
                 }
                 HStack{
-                    Text("職業")
-                    TextField("職業を入力してください", text: $occupation)
+                    Image("work")
+                        .renderingMode(.template)
+                    TextField("職業を入力", text: $occupation)
                         .font(.headline)
                         .padding(16)
                         .textFieldStyle(.plain)
-                        .overlay(
-                            Rectangle()
-                                .frame(height: 2)
-                                .padding(.horizontal,16)
-                                .foregroundColor(.gray.opacity(0.3)),
-                            alignment: .bottom
-                        )
                         .focused($focusField, equals: .occupation)
                 }
-                Toggle(isOn: $favorite) {
-                    Text("お気に入り")
+                HStack{
+                    Image("address")
+                        .renderingMode(.template)
+                    TextField("出身地を入力", text: $birthplace)
+                        .font(.headline)
+                        .padding(16)
+                        .textFieldStyle(.plain)
+                        .focused($focusField, equals: .birthplace)
+                }
+                HStack{
+                    Toggle(isOn: $favorite) {
+                        HStack{
+                            Image("star")
+                                .renderingMode(.template)
+                            Text("お気に入り")
+                                .fontWeight(.semibold)
+                        }
+                        
+                    }
+                    Spacer()
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
@@ -127,19 +96,18 @@ struct Add: View {
                     }
                     let person = Person(
                         name: inputName,
-                        furigana: furigana.isEmpty ? nil : furigana,
-                        nickname: nickName.isEmpty ? nil : nickName,
+                        relationship: relationship.isEmpty ? nil : relationship,
                         address: address.isEmpty ? nil : address,
                         occupation: occupation.isEmpty ? nil : occupation,
+                        birthplace: birthplace.isEmpty ? nil : birthplace,
                         favorite: favorite
                     )
                     modelContext.insert(person)
                     inputName = ""
-                    furigana = ""
-                    nickName = ""
                     relationship = ""
                     address = ""
                     occupation = ""
+                    birthplace = ""
                     favorite = false
                 } label : {
                     Text("作成")

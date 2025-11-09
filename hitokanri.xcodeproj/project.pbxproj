@@ -6,17 +6,47 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A9E25D252EC0C8C1004C9397 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D112EC0C8C1004C9397 /* Person.swift */; };
+		A9E25D262EC0C8C1004C9397 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D122EC0C8C1004C9397 /* Tab.swift */; };
+		A9E25D272EC0C8C1004C9397 /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D142EC0C8C1004C9397 /* Add.swift */; };
+		A9E25D282EC0C8C1004C9397 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D162EC0C8C1004C9397 /* Content.swift */; };
+		A9E25D292EC0C8C1004C9397 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D172EC0C8C1004C9397 /* CustomTabBar.swift */; };
+		A9E25D2A2EC0C8C1004C9397 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D182EC0C8C1004C9397 /* DetailView.swift */; };
+		A9E25D2B2EC0C8C1004C9397 /* hitokanriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D1D2EC0C8C1004C9397 /* hitokanriApp.swift */; };
+		A9E25D2C2EC0C8C1004C9397 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D1E2EC0C8C1004C9397 /* Home.swift */; };
+		A9E25D2D2EC0C8C1004C9397 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D1F2EC0C8C1004C9397 /* MailView.swift */; };
+		A9E25D2E2EC0C8C1004C9397 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D202EC0C8C1004C9397 /* SettingsView.swift */; };
+		A9E25D2F2EC0C8C1004C9397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D152EC0C8C1004C9397 /* Assets.xcassets */; };
+		A9E25D302EC0C8C1004C9397 /* distance_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D192EC0C8C1004C9397 /* distance_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */; };
+		A9E25D312EC0C8C1004C9397 /* edit.svg in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D1A2EC0C8C1004C9397 /* edit.svg */; };
+		A9E25D322EC0C8C1004C9397 /* graph_5_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D1B2EC0C8C1004C9397 /* graph_5_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */; };
+		A9E25D332EC0C8C1004C9397 /* sort_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D212EC0C8C1004C9397 /* sort_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */; };
+		A9E25D342EC0C8C1004C9397 /* stars_2_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D222EC0C8C1004C9397 /* stars_2_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */; };
+		A9E25D352EC0C8C1004C9397 /* work_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D232EC0C8C1004C9397 /* work_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		A9586A552EA2967F00CEDEC2 /* hitokanri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hitokanri.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9E25D112EC0C8C1004C9397 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		A9E25D122EC0C8C1004C9397 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		A9E25D142EC0C8C1004C9397 /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
+		A9E25D152EC0C8C1004C9397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9E25D162EC0C8C1004C9397 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		A9E25D172EC0C8C1004C9397 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		A9E25D182EC0C8C1004C9397 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		A9E25D192EC0C8C1004C9397 /* distance_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = distance_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg; sourceTree = "<group>"; };
+		A9E25D1A2EC0C8C1004C9397 /* edit.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = edit.svg; sourceTree = "<group>"; };
+		A9E25D1B2EC0C8C1004C9397 /* graph_5_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = graph_5_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg; sourceTree = "<group>"; };
+		A9E25D1C2EC0C8C1004C9397 /* hitokanri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hitokanri.entitlements; sourceTree = "<group>"; };
+		A9E25D1D2EC0C8C1004C9397 /* hitokanriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitokanriApp.swift; sourceTree = "<group>"; };
+		A9E25D1E2EC0C8C1004C9397 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		A9E25D1F2EC0C8C1004C9397 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		A9E25D202EC0C8C1004C9397 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A9E25D212EC0C8C1004C9397 /* sort_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = sort_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg; sourceTree = "<group>"; };
+		A9E25D222EC0C8C1004C9397 /* stars_2_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = stars_2_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg; sourceTree = "<group>"; };
+		A9E25D232EC0C8C1004C9397 /* work_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = work_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		A9586A572EA2967F00CEDEC2 /* hitokanri */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = hitokanri;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A9586A522EA2967F00CEDEC2 /* Frameworks */ = {
@@ -32,7 +62,7 @@
 		A9586A4C2EA2967F00CEDEC2 = {
 			isa = PBXGroup;
 			children = (
-				A9586A572EA2967F00CEDEC2 /* hitokanri */,
+				A9E25D242EC0C8C1004C9397 /* hitokanri */,
 				A9586A562EA2967F00CEDEC2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +73,39 @@
 				A9586A552EA2967F00CEDEC2 /* hitokanri.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A9E25D132EC0C8C1004C9397 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9E25D112EC0C8C1004C9397 /* Person.swift */,
+				A9E25D122EC0C8C1004C9397 /* Tab.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9E25D242EC0C8C1004C9397 /* hitokanri */ = {
+			isa = PBXGroup;
+			children = (
+				A9E25D132EC0C8C1004C9397 /* Model */,
+				A9E25D142EC0C8C1004C9397 /* Add.swift */,
+				A9E25D152EC0C8C1004C9397 /* Assets.xcassets */,
+				A9E25D162EC0C8C1004C9397 /* Content.swift */,
+				A9E25D172EC0C8C1004C9397 /* CustomTabBar.swift */,
+				A9E25D182EC0C8C1004C9397 /* DetailView.swift */,
+				A9E25D192EC0C8C1004C9397 /* distance_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */,
+				A9E25D1A2EC0C8C1004C9397 /* edit.svg */,
+				A9E25D1B2EC0C8C1004C9397 /* graph_5_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */,
+				A9E25D1C2EC0C8C1004C9397 /* hitokanri.entitlements */,
+				A9E25D1D2EC0C8C1004C9397 /* hitokanriApp.swift */,
+				A9E25D1E2EC0C8C1004C9397 /* Home.swift */,
+				A9E25D1F2EC0C8C1004C9397 /* MailView.swift */,
+				A9E25D202EC0C8C1004C9397 /* SettingsView.swift */,
+				A9E25D212EC0C8C1004C9397 /* sort_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */,
+				A9E25D222EC0C8C1004C9397 /* stars_2_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */,
+				A9E25D232EC0C8C1004C9397 /* work_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg */,
+			);
+			path = hitokanri;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +122,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				A9586A572EA2967F00CEDEC2 /* hitokanri */,
 			);
 			name = hitokanri;
 			packageProductDependencies = (
@@ -86,11 +146,10 @@
 				};
 			};
 			buildConfigurationList = A9586A502EA2967F00CEDEC2 /* Build configuration list for PBXProject "hitokanri" */;
-			developmentRegion = en;
+			developmentRegion = ja;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
-				Base,
+				ja,
 			);
 			mainGroup = A9586A4C2EA2967F00CEDEC2;
 			minimizedProjectReferenceProxies = 1;
@@ -109,6 +168,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E25D2F2EC0C8C1004C9397 /* Assets.xcassets in Resources */,
+				A9E25D302EC0C8C1004C9397 /* distance_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg in Resources */,
+				A9E25D312EC0C8C1004C9397 /* edit.svg in Resources */,
+				A9E25D322EC0C8C1004C9397 /* graph_5_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg in Resources */,
+				A9E25D332EC0C8C1004C9397 /* sort_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg in Resources */,
+				A9E25D342EC0C8C1004C9397 /* stars_2_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg in Resources */,
+				A9E25D352EC0C8C1004C9397 /* work_30dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +185,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E25D252EC0C8C1004C9397 /* Person.swift in Sources */,
+				A9E25D262EC0C8C1004C9397 /* Tab.swift in Sources */,
+				A9E25D272EC0C8C1004C9397 /* Add.swift in Sources */,
+				A9E25D282EC0C8C1004C9397 /* Content.swift in Sources */,
+				A9E25D292EC0C8C1004C9397 /* CustomTabBar.swift in Sources */,
+				A9E25D2A2EC0C8C1004C9397 /* DetailView.swift in Sources */,
+				A9E25D2B2EC0C8C1004C9397 /* hitokanriApp.swift in Sources */,
+				A9E25D2C2EC0C8C1004C9397 /* Home.swift in Sources */,
+				A9E25D2D2EC0C8C1004C9397 /* MailView.swift in Sources */,
+				A9E25D2E2EC0C8C1004C9397 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,11 +340,12 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.phihash.hitolog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -305,11 +382,12 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.phihash.hitolog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;

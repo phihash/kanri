@@ -8,7 +8,6 @@ struct SettingsView: View {
         NavigationStack{
             List{
                 Section{
-                    
                     HStack{
                         HStack(spacing: 18){
                             Image(systemName: "tag")
@@ -19,6 +18,16 @@ struct SettingsView: View {
                     }
                     .foregroundStyle(.primary)
                     .padding(.vertical,6)
+                    
+                    HStack(spacing: 12){
+                        ShareLink(item: URL(string: "https://apps.apple.com/jp/app/%E3%83%92%E3%83%88%E3%83%AD%E3%82%B0/id6754248786")!) {
+                            HStack(spacing: 18){
+                                Image(systemName: "star.fill")
+                                Text("アプリを共有する")
+                            }
+                        }
+                        .foregroundStyle(.primary)
+                    }
                 
                     Button{
                         requestReview()
@@ -100,8 +109,4 @@ struct SettingsView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
     }
-}
-
-#Preview {
-    SettingsView()
 }

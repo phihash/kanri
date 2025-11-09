@@ -3,9 +3,18 @@ import SwiftData
 
 struct Home: View {
     @State private var mode : String = "list"
+    @State private var isSorted : Bool = false
     @Query private var persons: [Person]
     @Environment(\.modelContext) private var modelContext
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    
+    var displayPersons: [Person] {
+        if isSorted {
+            return persons.sorted { $0.name < $1.name }
+        } else {
+            return persons
+        }
+    }
     var body: some View {
         NavigationStack{
             ScrollView(showsIndicators: false){
@@ -25,7 +34,7 @@ struct Home: View {
                     
                 } else{
                     if mode == "list"{
-                        ForEach(persons){ person in
+                        ForEach(displayPersons){ person in
                             NavigationLink(destination:DetailView(person: person)){
                                 ListSection(person: person)
                             }
@@ -33,7 +42,7 @@ struct Home: View {
                         
                     }else{
                         LazyVGrid(columns: columns){
-                            ForEach(persons){ person in
+                            ForEach(displayPersons){ person in
                                 NavigationLink(destination:DetailView(person: person)){
                                     SquareSection(person: person)
                                 }
@@ -49,6 +58,14 @@ struct Home: View {
             .navigationTitle(Text("一覧"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        isSorted.toggle()
+                    } label : {
+                        Image("sort")
+                            .foregroundColor(isSorted ? .accentColor : .primary)
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     if mode == "list"{
                         Button {
@@ -125,9 +142,4 @@ struct SquareSection : View {
         .padding(.vertical,12)
         .cornerRadius(12)
     }
-}
-
-
-#Preview {
-    Home()
 }
