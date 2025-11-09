@@ -18,6 +18,8 @@
 		A9E25D2E2EC0C8C1004C9397 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D202EC0C8C1004C9397 /* SettingsView.swift */; };
 		A9E25D2F2EC0C8C1004C9397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D152EC0C8C1004C9397 /* Assets.xcassets */; };
 		A9E25D3B2EC0C983004C9397 /* hitokanriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D392EC0C983004C9397 /* hitokanriApp.swift */; };
+		A9E25D452EC0CA4B004C9397 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D432EC0CA4B004C9397 /* LaunchScreen.storyboard */; };
+		A9E25D472EC0CB32004C9397 /* hito.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D462EC0CB32004C9397 /* hito.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		A9E25D1F2EC0C8C1004C9397 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		A9E25D202EC0C8C1004C9397 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A9E25D392EC0C983004C9397 /* hitokanriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitokanriApp.swift; sourceTree = "<group>"; };
+		A9E25D432EC0CA4B004C9397 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A9E25D462EC0CB32004C9397 /* hito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hito.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,10 @@
 				A9E25D3A2EC0C983004C9397 /* Apps */,
 				A9E25D3F2EC0C9AE004C9397 /* Views */,
 				A9E25D132EC0C8C1004C9397 /* Model */,
+				A9E25D442EC0CA4B004C9397 /* StoryBoards */,
 				A9E25D152EC0C8C1004C9397 /* Assets.xcassets */,
 				A9E25D1C2EC0C8C1004C9397 /* hitokanri.entitlements */,
+				A9E25D462EC0CB32004C9397 /* hito.png */,
 			);
 			path = hitokanri;
 			sourceTree = "<group>";
@@ -112,6 +118,14 @@
 				A9E25D142EC0C8C1004C9397 /* Add.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A9E25D442EC0CA4B004C9397 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				A9E25D432EC0CA4B004C9397 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +189,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9E25D2F2EC0C8C1004C9397 /* Assets.xcassets in Resources */,
+				A9E25D452EC0CA4B004C9397 /* LaunchScreen.storyboard in Resources */,
+				A9E25D472EC0CB32004C9397 /* hito.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +352,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -378,6 +395,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
