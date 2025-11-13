@@ -89,31 +89,6 @@ struct Add: View {
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
-                Button{
-                    if inputName.isEmpty {
-                        isAlert = true
-                        return
-                    }
-                    let person = Person(
-                        name: inputName,
-                        relationship: relationship.isEmpty ? nil : relationship,
-                        address: address.isEmpty ? nil : address,
-                        occupation: occupation.isEmpty ? nil : occupation,
-                        birthplace: birthplace.isEmpty ? nil : birthplace,
-                        favorite: favorite
-                    )
-                    modelContext.insert(person)
-                    inputName = ""
-                    relationship = ""
-                    address = ""
-                    occupation = ""
-                    birthplace = ""
-                    favorite = false
-                } label : {
-                    Text("作成")
-                        .padding(16)
-                        .font(.title2)
-                }
                 
             }
             .padding(.horizontal)
@@ -129,21 +104,39 @@ struct Add: View {
                 Text("名前は必須項目です")
             }
             
-           
+            .toolbar{
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        if inputName.isEmpty {
+                            isAlert = true
+                            return
+                        }
+                        let person = Person(
+                            name: inputName,
+                            relationship: relationship.isEmpty ? nil : relationship,
+                            address: address.isEmpty ? nil : address,
+                            occupation: occupation.isEmpty ? nil : occupation,
+                            birthplace: birthplace.isEmpty ? nil : birthplace,
+                            favorite: favorite
+                        )
+                        modelContext.insert(person)
+                        inputName = ""
+                        relationship = ""
+                        address = ""
+                        occupation = ""
+                        birthplace = ""
+                        favorite = false
+                    } label : {
+                        Text("保存")
+                    }
+                }
+            }
             .navigationTitle(Text("新規作成"))
             .navigationBarTitleDisplayMode(.inline)
         }
-        .toolbar{
-            ToolbarItemGroup(placement: .keyboard){
-                
-                Spacer()
-                Button("閉じる"){
-                    focusField = nil
-                
-                }
-                
-            }
-        }
+
         
     }
 }
+
+    

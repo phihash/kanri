@@ -109,6 +109,23 @@ struct ListSection : View {
             }
             .padding(.leading,8)
             Spacer()
+            Group{
+                if person.favorite{
+                    Button {
+                        person.favorite.toggle()
+                    } label: {
+                        Image(systemName: "star.fill")
+                    }
+                }else{
+                    Button{
+                        person.favorite.toggle()
+                    } label :{
+                        Image("star")
+                    }
+                }
+                
+            }
+            
         }
         .padding(.horizontal,18)
         .padding(.vertical,12)

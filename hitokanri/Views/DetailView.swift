@@ -45,6 +45,21 @@ struct DetailView: View {
                             set: { person.relationship = $0.isEmpty ? nil : $0 }
                         )
                     )
+                    
+                    HStack{
+                        Toggle(isOn: $person.favorite) {
+                            HStack{
+                                Image("star")
+                                    .renderingMode(.template)
+                                Text("お気に入り")
+                                    .fontWeight(.semibold)
+                            }
+                            
+                        }
+                        Spacer()
+                    }
+                  
+                    
                 }
                 .padding(.horizontal, 24)
                 .padding(.vertical, 16)
