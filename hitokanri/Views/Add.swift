@@ -20,6 +20,7 @@ struct Add: View {
     @State var favorite = false
     @State private var isAlert : Bool = false
     @FocusState private var focusField: Field?
+    @Binding var addPerson: Bool
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false){
@@ -106,29 +107,36 @@ struct Add: View {
             
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        if inputName.isEmpty {
-                            isAlert = true
-                            return
+                    HStack{
+                        Button("閉じる"){
+                            addPerson = false
                         }
-                        let person = Person(
-                            name: inputName,
-                            relationship: relationship.isEmpty ? nil : relationship,
-                            address: address.isEmpty ? nil : address,
-                            occupation: occupation.isEmpty ? nil : occupation,
-                            birthplace: birthplace.isEmpty ? nil : birthplace,
-                            favorite: favorite
-                        )
-                        modelContext.insert(person)
-                        inputName = ""
-                        relationship = ""
-                        address = ""
-                        occupation = ""
-                        birthplace = ""
-                        favorite = false
-                    } label : {
-                        Text("保存")
+                        Button {
+                            if inputName.isEmpty {
+                                isAlert = true
+                                return
+                            }
+                            let person = Person(
+                                name: inputName,
+                                relationship: relationship.isEmpty ? nil : relationship,
+                                address: address.isEmpty ? nil : address,
+                                occupation: occupation.isEmpty ? nil : occupation,
+                                birthplace: birthplace.isEmpty ? nil : birthplace,
+                                favorite: favorite
+                            )
+                            modelContext.insert(person)
+                            inputName = ""
+                            relationship = ""
+                            address = ""
+                            occupation = ""
+                            birthplace = ""
+                            favorite = false
+                            addPerson = false
+                        } label : {
+                            Text("保存")
+                        }
                     }
+                  
                 }
             }
             .navigationTitle(Text("新規作成"))

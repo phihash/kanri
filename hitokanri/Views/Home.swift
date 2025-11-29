@@ -4,6 +4,7 @@ import SwiftData
 struct Home: View {
     @State private var mode : String = "list"
     @State private var isSorted : Bool = false
+    @State private var addPerson : Bool = false
     @Query private var persons: [Person]
     @Environment(\.modelContext) private var modelContext
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
@@ -17,71 +18,102 @@ struct Home: View {
     }
     var body: some View {
         NavigationStack{
-            ScrollView(showsIndicators: false){
-                
-                if persons.isEmpty {
+            ZStack{
+                ScrollView(showsIndicators: false){
                     
-                    VStack(spacing: 16){
-                        Image(systemName: "person.slash")
-                            .font(.system(size: 60))
-                            .foregroundColor(.gray)
-                        Text("データがありません")
-                            .font(.title3)
-                    }
-                    .padding(.top, 200)
-                    
-                    
-                    
-                } else{
-                    if mode == "list"{
-                        ForEach(displayPersons){ person in
-                            NavigationLink(destination:DetailView(person: person)){
-                                ListSection(person: person)
-                            }
-                        }
+                    if persons.isEmpty {
                         
-                    }else{
-                        LazyVGrid(columns: columns){
+                        VStack(spacing: 16){
+                            Image(systemName: "person.slash")
+                                .font(.system(size: 60))
+                                .foregroundColor(.gray)
+                            Text("データがありません")
+                                .font(.title3)
+                        }
+                        .padding(.top, 200)
+                        
+                        
+                        
+                    } else{
+                        if mode == "list"{
                             ForEach(displayPersons){ person in
                                 NavigationLink(destination:DetailView(person: person)){
-                                    SquareSection(person: person)
+                                    ListSection(person: person)
+                                }
+                            }
+                            
+                        }else{
+                            LazyVGrid(columns: columns){
+                                ForEach(displayPersons){ person in
+                                    NavigationLink(destination:DetailView(person: person)){
+                                        SquareSection(person: person)
+                                    }
+                                }
+                            }
+                            .padding(.horizontal,18)
+                            
+                        }
+                    }
+                    
+                }
+                .padding(.vertical,24)
+                .navigationTitle(Text("一覧"))
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar{
+                    ToolbarItem(placement: .topBarLeading) {
+                        NavigationLink(destination:SettingsView() , ){
+                            Image(systemName: "gear")
+                                .foregroundColor(.black)
+                        }
+                        
+                    }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        HStack {
+                            Button {
+                                isSorted.toggle()
+                            } label : {
+                                Image("sort")
+                                    .foregroundColor(isSorted ? .accentColor : .primary)
+                            }
+                            if mode == "list"{
+                                Button {
+                                    mode = "square"
+                                } label : {
+                                    Image("square")
+                                }
+                            }else{
+                                Button {
+                                    mode = "list"
+                                } label : {
+                                    Image("list")
                                 }
                             }
                         }
-                        .padding(.horizontal,18)
-                        
                     }
                 }
                 
-            }
-            .padding(.vertical,24)
-            .navigationTitle(Text("一覧"))
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar{
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        isSorted.toggle()
-                    } label : {
-                        Image("sort")
-                            .foregroundColor(isSorted ? .accentColor : .primary)
-                    }
-                }
-                ToolbarItem(placement: .topBarTrailing) {
-                    if mode == "list"{
-                        Button {
-                            mode = "square"
-                        } label : {
-                            Image("square")
+                Button{
+                    addPerson = true
+                } label:{
+                    Circle().fill(.green)
+                        .frame(width: 64,height: 64)
+                        .overlay{
+                            Image("add")
+                                .renderingMode(.template)
+                                .foregroundStyle(.white)
                         }
-                    }else{
-                        Button {
-                            mode = "list"
-                        } label : {
-                            Image("list")
-                        }
-                    }
+            
+                        
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                .padding(.trailing,30)
+                .padding(.bottom,32)
             }
+            .fullScreenCover(isPresented: $addPerson){
+                Add(addPerson:$addPerson)
+            }
+            
+            
         }
     }
 }

@@ -7,6 +7,7 @@ struct DetailView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var isDeleteDialog = false
     @State private var isEditing = false
+    @State private var isExporting = false
     @FocusState private var isFocused: Bool
     var body: some View {
         NavigationStack{
@@ -69,6 +70,13 @@ struct DetailView: View {
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
                     HStack{
+                        Button {
+                            exportToCSV()
+                        } label : {
+                            Image(systemName:"square.and.arrow.up")
+                                .foregroundStyle(.black)
+                        }
+                        
                         if isEditing {
                             Button {
                                 try? modelContext.save()
@@ -90,6 +98,7 @@ struct DetailView: View {
                             Image("delete")
                         }
                         
+                       
                     }
                     
                 }
@@ -135,5 +144,61 @@ private extension DetailView {
             Text((value.isEmpty && showDashWhenEmpty) ? "-" : value)
                 .font(.title3)
         }
+    }
+    
+    func exportToCSV(){
+        //まずはヘッダー作成
+        let headers = ["名前", "関係性", "住所", "職業", "出身地", "お気に入り"]
+        let values = [
+            person.name,
+            person.relationship ?? "",
+            person.address ?? "",
+            person.occupation ?? "",
+            person.birthplace ?? "",
+            person.favorite ? "はい" : "いいえ"
+        ]
+        let headerLine = headers.joined(separator: ",")
+        let valueLine = values.map{"\"\($0)\""}.joined(separator: ",")
+        let csvString = headerLine + "\n" + valueLine
+        
+        let fileName = "\(person.name)_profile.csv"
+        
+//        iOSでは各アプリに専用のサンドボックス（隔離された領域）があります：
+        
+//        /var/mobile/Containers/Data/Application/[アプリID]/
+//        ├── Documents/     ← ここ！ユーザーファイル保存用
+//        ├── Library/       ← アプリ設定ファイル等
+//        └── tmp/          ← 一時ファイル
+//        
+//        - Documents = ユーザーが作成したファイルを保存する場所
+//        - iTunesバックアップに含まれる
+//        - 他のアプリからはアクセス不可（セキュリティ）
+//
+//        
+//            .userDomainMask     // 現在のユーザー用
+//            .localDomainMask    // システム全体用（管理者権限必要）
+//            .networkDomainMask  // ネットワーク上
+//            .systemDomainMask   // システム専用
+
+        if let documentsPath = FileManager.default.urls(for:.documentDirectory, in:.userDomainMask).first{
+            let fileURL = documentsPath.appendingPathComponent(fileName) //安全に結合
+            do {
+                try csvString.write(to: fileURL, atomically: true, encoding: .utf8)
+                let activityVC = UIActivityViewController(
+                    activityItems: [fileURL],
+                    applicationActivities: nil
+                )
+                
+                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                   let window = windowScene.windows.first {
+                    window.rootViewController?.present(activityVC, animated: true)
+                }
+
+
+            } catch {
+                print("CSV出力エラー")
+            }
+        }
+
     }
 }

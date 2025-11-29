@@ -4,6 +4,7 @@ import StoreKit
 struct SettingsView: View {
     @Environment(\.requestReview) private var requestReview
     @State var isShowMailView = false
+    @AppStorage("isPasscodeEnabled") private var isPasscodeEnabled = false
     var body: some View {
         NavigationStack{
             List{
@@ -15,6 +16,17 @@ struct SettingsView: View {
                         }
                         Spacer()
                         Text(Bundle.main.appVersion)
+                    }
+                    .foregroundStyle(.primary)
+                    .padding(.vertical,6)
+                    
+                    HStack{
+                        HStack(spacing: 18){
+                            Image(systemName: "key")
+                            Text("パスコード")
+                        }
+                        Spacer()
+                        Toggle(isOn: $isPasscodeEnabled) {}
                     }
                     .foregroundStyle(.primary)
                     .padding(.vertical,6)
