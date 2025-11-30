@@ -29,11 +29,14 @@ struct Home: View {
                         .padding(.top, 200)
                         
                     } else{
-                        ForEach(displayPersons){ person in
-                            NavigationLink(destination:DetailView(person: person)){
-                                ListSection(person: person)
+                        LazyVGrid(columns:Array(repeating: .init(.flexible(minimum: 10, maximum: 300)), count: 2)){
+                            ForEach(displayPersons){ person in
+                                NavigationLink(destination:DetailView(person: person)){
+                                    ListSection(person: person)
+                                }
                             }
                         }
+                       
                     }
                     
                 }
@@ -70,8 +73,7 @@ struct Home: View {
                                 .renderingMode(.template)
                                 .foregroundStyle(.white)
                         }
-            
-                        
+                    
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
                 .padding(.trailing,30)
@@ -87,40 +89,31 @@ struct Home: View {
 struct ListSection : View {
     let person: Person
     var body : some View {
-        HStack{
-            VStack{
-                VStack(alignment: .leading,spacing: 6){
-                    Text(person.name)
-                        .font(.custom("HiraginoSans-W6", size: 20))
-                    if let relationship = person.relationship, !relationship.isEmpty {
-                        Text(relationship)
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
-                    }
-                }
-            }
+        
 
-            Group{
-                if person.favorite{
-                    Button {
-                        person.favorite.toggle()
-                    } label: {
-                        Image(systemName: "star.fill")
-                    }
-                }else{
-                    Button{
-                        person.favorite.toggle()
-                    } label :{
-                        Image("star")
-                    }
+            VStack{
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(Color.green)
+                    .frame(width: 180,height: 108)
+                Text(person.name)
+                    .foregroundStyle(Color.black)
+                    .font(.custom("HiraginoSans-W6", size: 14))
+                    .padding(.top,4)
+                    .padding(.bottom,10)
+            }.overlay(alignment: .topTrailing) {
+                Button {
+                    person.favorite.toggle()
+                } label: {
+                    Image(systemName: person.favorite ? "star.fill" : "star")
+                        .font(.system(size: 20))
+                        .foregroundStyle(.white)
                 }
-            }            
-        }
-        .padding(.horizontal,18)
-        .padding(.vertical,12)
-        .background(Color.black.opacity(0.1))
-        .cornerRadius(12)
-        .padding(.horizontal,12)
+                .padding(.top, 8)
+                .padding(.trailing, 8)
+            }
+            
+  
+        
     }
 }
 
