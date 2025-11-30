@@ -2,12 +2,10 @@ import SwiftUI
 import SwiftData
 
 struct Home: View {
-    @State private var mode : String = "list"
     @State private var isSorted : Bool = false
     @State private var addPerson : Bool = false
     @Query private var persons: [Person]
     @Environment(\.modelContext) private var modelContext
-    let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var displayPersons: [Person] {
         if isSorted {
@@ -20,9 +18,7 @@ struct Home: View {
         NavigationStack{
             ZStack{
                 ScrollView(showsIndicators: false){
-                    
                     if persons.isEmpty {
-                        
                         VStack(spacing: 16){
                             Image(systemName: "person.slash")
                                 .font(.system(size: 60))
@@ -32,26 +28,11 @@ struct Home: View {
                         }
                         .padding(.top, 200)
                         
-                        
-                        
                     } else{
-                        if mode == "list"{
-                            ForEach(displayPersons){ person in
-                                NavigationLink(destination:DetailView(person: person)){
-                                    ListSection(person: person)
-                                }
+                        ForEach(displayPersons){ person in
+                            NavigationLink(destination:DetailView(person: person)){
+                                ListSection(person: person)
                             }
-                            
-                        }else{
-                            LazyVGrid(columns: columns){
-                                ForEach(displayPersons){ person in
-                                    NavigationLink(destination:DetailView(person: person)){
-                                        SquareSection(person: person)
-                                    }
-                                }
-                            }
-                            .padding(.horizontal,18)
-                            
                         }
                     }
                     
@@ -74,19 +55,6 @@ struct Home: View {
                             } label : {
                                 Image("sort")
                                     .foregroundColor(isSorted ? .accentColor : .primary)
-                            }
-                            if mode == "list"{
-                                Button {
-                                    mode = "square"
-                                } label : {
-                                    Image("square")
-                                }
-                            }else{
-                                Button {
-                                    mode = "list"
-                                } label : {
-                                    Image("list")
-                                }
                             }
                         }
                     }
@@ -112,8 +80,6 @@ struct Home: View {
             .fullScreenCover(isPresented: $addPerson){
                 Add(addPerson:$addPerson)
             }
-            
-            
         }
     }
 }
@@ -122,25 +88,18 @@ struct ListSection : View {
     let person: Person
     var body : some View {
         HStack{
-            Circle()
-                .fill(.gray)
-                .frame(width: 56, height: 56)
-                .overlay {
-                    Image(systemName: "person")
-                        .font(.title)
-                }
-            
-            VStack(alignment: .leading,spacing: 6){
-                Text(person.name)
-                    .font(.custom("HiraginoSans-W6", size: 20))
-                if let relationship = person.relationship, !relationship.isEmpty {
-                    Text(relationship)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
+            VStack{
+                VStack(alignment: .leading,spacing: 6){
+                    Text(person.name)
+                        .font(.custom("HiraginoSans-W6", size: 20))
+                    if let relationship = person.relationship, !relationship.isEmpty {
+                        Text(relationship)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
                 }
             }
-            .padding(.leading,8)
-            Spacer()
+
             Group{
                 if person.favorite{
                     Button {
@@ -155,9 +114,7 @@ struct ListSection : View {
                         Image("star")
                     }
                 }
-                
-            }
-            
+            }            
         }
         .padding(.horizontal,18)
         .padding(.vertical,12)
@@ -167,28 +124,3 @@ struct ListSection : View {
     }
 }
 
-struct SquareSection : View {
-    let person: Person
-    var body: some View {
-        VStack(spacing: 12){
-            Circle()
-                .fill(.gray)
-                .frame(width: 56, height: 56)
-                .overlay {
-                    Image(systemName: "person")
-                        .font(.title)
-                }
-            Text(person.name)
-                .font(.custom("HiraginoSans-W6", size: 12))
-            if let relationship = person.relationship, !relationship.isEmpty {
-                Text(relationship)
-                    .font(.caption2)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-            }
-        }
-        .padding(.horizontal,8)
-        .padding(.vertical,12)
-        .cornerRadius(12)
-    }
-}

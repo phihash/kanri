@@ -7,9 +7,11 @@ struct hitokanriApp: App {
     @AppStorage("isPasscodeEnabled") private var isPasscodeEnabled = false
     @State private var isAuthenticated = false
     @State private var isAuthenticating = false
+    
+  
     private func authenticate() {
         let context = LAContext()
-        let reason = "アプリにアクセスするために認証が必要です"
+        let reason = "アプリにアクセスするためにパスコードが必要です"
         
         context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, error in
             DispatchQueue.main.async {
@@ -22,7 +24,7 @@ struct hitokanriApp: App {
     var body: some Scene {
         WindowGroup {
             if isPasscodeEnabled && !isAuthenticated{
-                Text("認証が必要です")
+                Text("パスコードが必要です")
                     .onAppear{
                         
                         authenticate()
