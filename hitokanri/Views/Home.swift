@@ -36,7 +36,6 @@ struct Home: View {
                                 }
                             }
                         }
-                       
                     }
                     
                 }
@@ -45,8 +44,8 @@ struct Home: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar{
                     ToolbarItem(placement: .topBarLeading) {
-                        NavigationLink(destination:SettingsView() , ){
-                            Image(systemName: "gear")
+                        NavigationLink(destination:SettingsView()){
+                            Image("settings")
                                 .foregroundColor(.black)
                         }
                         
@@ -89,7 +88,6 @@ struct Home: View {
 struct ListSection : View {
     let person: Person
     var body : some View {
-        
 
             VStack{
                 RoundedRectangle(cornerRadius: 16)
@@ -111,8 +109,6 @@ struct ListSection : View {
                 .padding(.top, 8)
                 .padding(.trailing, 8)
             }
-            
-  
         
     }
 }

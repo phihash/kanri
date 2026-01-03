@@ -13,7 +13,8 @@ struct Add: View {
     @Query private var persons: [Person]
     @Environment(\.modelContext) private var modelContext
     @State var inputName = ""
-    @State var relationship = ""
+    @State var relationship = "友人"
+    @State var showingRelationshipSheet = false
     @State var address = ""
     @State var occupation = ""
     @State var birthplace = ""
@@ -41,13 +42,24 @@ struct Add: View {
                 HStack{
                     Image("relationship")
                         .renderingMode(.template)
-                    TextField("(例) 友人  尊敬する人 推し etc", text: $relationship)
-                        .font(.headline)
-                        .padding(16)
-                        .textFieldStyle(.plain)
-                        
-                        .focused($focusField, equals: .relationship)
+                    HStack(spacing: 4) {
+                        Image(systemName: "gear")
+                        Text(relationship)
+                    }
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: UIScreen.main.bounds.width * 0.24, minHeight: 40)
+                    .background(.red)
+                    .cornerRadius(25)
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
+                    .onTapGesture {
+                        showingRelationshipSheet = true
+                    }
+                    Spacer()
                 }
+                
                 HStack{
                     Image("address")
                         .renderingMode(.template)
@@ -104,7 +116,10 @@ struct Add: View {
             } message: {
                 Text("名前は必須項目です")
             }
-            
+            .sheet(isPresented: $showingRelationshipSheet) {
+                AddCategory(selectedRelationship: $relationship)
+                    .presentationDetents([.fraction(0.6)])
+            }
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
                     HStack{

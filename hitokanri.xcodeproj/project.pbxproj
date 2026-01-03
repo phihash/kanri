@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A905C42B2F095BB100587825 /* AddCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A905C42A2F095BB100587825 /* AddCategory.swift */; };
 		A9E25D252EC0C8C1004C9397 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D112EC0C8C1004C9397 /* Person.swift */; };
 		A9E25D272EC0C8C1004C9397 /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D142EC0C8C1004C9397 /* Add.swift */; };
 		A9E25D2A2EC0C8C1004C9397 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D182EC0C8C1004C9397 /* DetailView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A905C42A2F095BB100587825 /* AddCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategory.swift; sourceTree = "<group>"; };
 		A9586A552EA2967F00CEDEC2 /* hitokanri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hitokanri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E25D112EC0C8C1004C9397 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		A9E25D142EC0C8C1004C9397 /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				A9E25D202EC0C8C1004C9397 /* SettingsView.swift */,
 				A9E25D182EC0C8C1004C9397 /* DetailView.swift */,
 				A9E25D142EC0C8C1004C9397 /* Add.swift */,
+				A905C42A2F095BB100587825 /* AddCategory.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				A9E25D252EC0C8C1004C9397 /* Person.swift in Sources */,
 				A9E25D272EC0C8C1004C9397 /* Add.swift in Sources */,
 				A9E25D2A2EC0C8C1004C9397 /* DetailView.swift in Sources */,
+				A905C42B2F095BB100587825 /* AddCategory.swift in Sources */,
 				A9E25D2C2EC0C8C1004C9397 /* Home.swift in Sources */,
 				A9E25D3B2EC0C983004C9397 /* hitokanriApp.swift in Sources */,
 				A9E25D2D2EC0C8C1004C9397 /* MailView.swift in Sources */,
