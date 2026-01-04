@@ -42,21 +42,20 @@ struct Add: View {
                 HStack{
                     Image("relationship")
                         .renderingMode(.template)
-                    HStack(spacing: 4) {
-                        Image(systemName: "gear")
-                        Text(relationship)
-                    }
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
-                    .frame(maxWidth: UIScreen.main.bounds.width * 0.24, minHeight: 40)
-                    .background(.red)
-                    .cornerRadius(25)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 6)
-                    .onTapGesture {
-                        showingRelationshipSheet = true
-                    }
+                    
+                    Text(relationship)
+                    
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: UIScreen.main.bounds.width * 0.24, minHeight: 40)
+                        .background(.blue)
+                        .cornerRadius(25)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 6)
+                        .onTapGesture {
+                            showingRelationshipSheet = true
+                        }
                     Spacer()
                 }
                 
@@ -67,7 +66,7 @@ struct Add: View {
                         .font(.headline)
                         .padding(16)
                         .textFieldStyle(.plain)
-                        
+                    
                         .focused($focusField, equals: .address)
                 }
                 HStack{
@@ -118,7 +117,7 @@ struct Add: View {
             }
             .sheet(isPresented: $showingRelationshipSheet) {
                 AddCategory(selectedRelationship: $relationship)
-                    .presentationDetents([.fraction(0.8)])
+                    .presentationDetents([.fraction(0.65)])
             }
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
@@ -151,15 +150,15 @@ struct Add: View {
                             Text("保存")
                         }
                     }
-                  
+                    
                 }
             }
             .navigationTitle(Text("新規作成"))
             .navigationBarTitleDisplayMode(.inline)
         }
-
+        
         
     }
 }
 
-    
+
