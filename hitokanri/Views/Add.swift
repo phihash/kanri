@@ -118,7 +118,7 @@ struct Add: View {
             }
             .sheet(isPresented: $showingRelationshipSheet) {
                 AddCategory(selectedRelationship: $relationship)
-                    .presentationDetents([.fraction(0.6)])
+                    .presentationDetents([.fraction(0.8)])
             }
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
