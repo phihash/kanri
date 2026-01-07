@@ -88,11 +88,15 @@ struct Home: View {
 struct ListSection : View {
     let person: Person
     var body : some View {
-
             VStack{
                 RoundedRectangle(cornerRadius: 16)
-                    .fill(Color.green)
+                    .fill(Color.blue)
                     .frame(width: 180,height: 108)
+                    .overlay(
+                        Text("👤")
+                            .font(.system(size: 50))
+                            .foregroundColor(.white)
+                    )
                 Text(person.name)
                     .foregroundStyle(Color.black)
                     .font(.custom("HiraginoSans-W6", size: 14))

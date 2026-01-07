@@ -33,7 +33,7 @@ struct AddCategory: View {
                 }
             }
             .padding(.horizontal, 16)
-            .padding(.bottom,8)
+            .padding(.bottom,16)
             
             Rectangle()
                 .fill(Color.gray)
@@ -75,7 +75,7 @@ struct AddCategory: View {
                 Spacer()
             }
             .padding(.horizontal,16)
-            .padding(.bottom,8)
+            .padding(.bottom,16)
             
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 8) {
                 ForEach(otherRelationship ,id: \.self){ relationship in

@@ -8,6 +8,7 @@ struct DetailView: View {
     @State private var isDeleteDialog = false
     @State private var isEditing = false
     @State private var isExporting = false
+    @State private var showCategorySheet = false
     @FocusState private var isFocused: Bool
     var body: some View {
         NavigationStack{
@@ -39,13 +40,32 @@ struct DetailView: View {
                         )
                     )
                     
-                    editableField(
-                        label: "関係性",
-                        text: Binding(
-                            get: { person.relationship ?? "" },
-                            set: { person.relationship = $0.isEmpty ? nil : $0 }
-                        )
-                    )
+                    VStack(alignment: .leading) {
+                        Text("関係性")
+                            .font(.headline)
+                            .foregroundStyle(.secondary)
+                        
+                        if isEditing {
+                            Button {
+                                showCategorySheet = true
+                            } label: {
+                                HStack {
+                                    Text(person.relationship?.isEmpty == false ? person.relationship! : "関係性を選択")
+                                        .font(.title3)
+                                        .foregroundColor(person.relationship?.isEmpty == false ? .primary : .secondary)
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                        .foregroundColor(.secondary)
+                                }
+                                .padding()
+                                .background(Color.gray.opacity(0.1))
+                                .cornerRadius(8)
+                            }
+                        } else {
+                            Text(person.relationship?.isEmpty == false ? person.relationship! : "-")
+                                .font(.title3)
+                        }
+                    }
                     
                     HStack{
                         Toggle(isOn: $person.favorite) {
@@ -121,6 +141,12 @@ struct DetailView: View {
                         isFocused = false
                     }
                 }
+            }
+            .sheet(isPresented: $showCategorySheet) {
+                AddCategory(selectedRelationship: Binding(
+                    get: { person.relationship ?? "" },
+                    set: { person.relationship = $0.isEmpty ? nil : $0 }
+                ))
             }
         }
     }
