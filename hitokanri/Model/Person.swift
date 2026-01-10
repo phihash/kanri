@@ -31,7 +31,7 @@ class Person{
         if let instagramID = instagramID {
             self.instagramID = instagramID
         }
-    
+        
         self.favorite = favorite
     }
     
@@ -42,23 +42,18 @@ class Person{
     var occupation: String?             // 職業
     var favorite: Bool = false
     
-
     //    var genderStyle: String?            // 性別・ジェンダースタイル・未設定可
     //    var birthday: Date?                 // 誕生日
-
-        var birthplace: String?             // 出身地
     
-    
-    //
-    
+    var birthplace: String?             // 出身地
     //
     //    // 連絡先
     //    var phoneNumber: String?
     //    var email: String?
     //
-        // SNS
-        var twitterID: String?
-        var instagramID: String?
+    // SNS
+    var twitterID: String?
+    var instagramID: String?
     
     //    // その他
     //    var notes: String?                  // 備考・メモ

@@ -4,21 +4,21 @@ import UIKit
 
 struct MailView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentation
-
+    
     var address: [String]
     var subject: String
     var body: String
-
+    
     init(address: [String], subject: String, body: String) {
         self.address = address
         self.subject = subject
         self.body = body
     }
-
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(presentation: presentation)
     }
-
+    
     func makeUIViewController(
         context: UIViewControllerRepresentableContext<MailView>
     ) -> MFMailComposeViewController {
@@ -27,17 +27,17 @@ struct MailView: UIViewControllerRepresentable {
         viewController.setToRecipients(address)
         viewController.setSubject(subject)
         viewController.setMessageBody(body, isHTML: false)
-
+        
         return viewController
     }
-
+    
     func updateUIViewController(_: MFMailComposeViewController, context _: UIViewControllerRepresentableContext<MailView>) {}
 }
 
 extension MailView {
     class Coordinator: NSObject {
         @Binding var presentation: PresentationMode
-
+        
         init(
             presentation: Binding<PresentationMode>
         ) {

@@ -40,7 +40,7 @@ struct SettingsView: View {
                         }
                         .foregroundStyle(.primary)
                     }
-                
+                    
                     Button{
                         requestReview()
                     } label : {
