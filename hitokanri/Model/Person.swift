@@ -9,6 +9,8 @@ class Person{
          occupation: String? = nil,
          birthplace: String? = nil,
          bloodType : String? = nil,
+         twitterID: String? = nil,
+         instagramID: String? = nil,
          favorite: Bool = false){
         self.name = name
         if let relationship = relationship {
@@ -22,6 +24,12 @@ class Person{
         }
         if let birthplace = birthplace {
             self.birthplace = birthplace
+        }
+        if let twitterID = twitterID {
+            self.twitterID = twitterID
+        }
+        if let instagramID = instagramID {
+            self.instagramID = instagramID
         }
     
         self.favorite = favorite
@@ -48,11 +56,10 @@ class Person{
     //    var phoneNumber: String?
     //    var email: String?
     //
-    //    // SNS
-    //    var twitterID: String?
-    //    var instagramID: String?
-    //    var facebookID: String?
-    //
+        // SNS
+        var twitterID: String?
+        var instagramID: String?
+    
     //    // その他
     //    var notes: String?                  // 備考・メモ
     //

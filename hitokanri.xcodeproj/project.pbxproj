@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A905C42B2F095BB100587825 /* AddCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A905C42A2F095BB100587825 /* AddCategory.swift */; };
+		A905C4672F10194900587825 /* PersonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A905C4662F10194900587825 /* PersonFormView.swift */; };
 		A9E25D252EC0C8C1004C9397 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D112EC0C8C1004C9397 /* Person.swift */; };
-		A9E25D272EC0C8C1004C9397 /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D142EC0C8C1004C9397 /* Add.swift */; };
-		A9E25D2A2EC0C8C1004C9397 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D182EC0C8C1004C9397 /* DetailView.swift */; };
 		A9E25D2C2EC0C8C1004C9397 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D1E2EC0C8C1004C9397 /* Home.swift */; };
 		A9E25D2D2EC0C8C1004C9397 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D1F2EC0C8C1004C9397 /* MailView.swift */; };
 		A9E25D2E2EC0C8C1004C9397 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D202EC0C8C1004C9397 /* SettingsView.swift */; };
@@ -22,11 +21,10 @@
 
 /* Begin PBXFileReference section */
 		A905C42A2F095BB100587825 /* AddCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategory.swift; sourceTree = "<group>"; };
+		A905C4662F10194900587825 /* PersonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonFormView.swift; sourceTree = "<group>"; };
 		A9586A552EA2967F00CEDEC2 /* hitokanri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hitokanri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E25D112EC0C8C1004C9397 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		A9E25D142EC0C8C1004C9397 /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
 		A9E25D152EC0C8C1004C9397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A9E25D182EC0C8C1004C9397 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		A9E25D1C2EC0C8C1004C9397 /* hitokanri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hitokanri.entitlements; sourceTree = "<group>"; };
 		A9E25D1E2EC0C8C1004C9397 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		A9E25D1F2EC0C8C1004C9397 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
@@ -96,11 +94,10 @@
 		A9E25D3F2EC0C9AE004C9397 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A905C4662F10194900587825 /* PersonFormView.swift */,
 				A9E25D1E2EC0C8C1004C9397 /* Home.swift */,
 				A9E25D1F2EC0C8C1004C9397 /* MailView.swift */,
 				A9E25D202EC0C8C1004C9397 /* SettingsView.swift */,
-				A9E25D182EC0C8C1004C9397 /* DetailView.swift */,
-				A9E25D142EC0C8C1004C9397 /* Add.swift */,
 				A905C42A2F095BB100587825 /* AddCategory.swift */,
 			);
 			path = Views;
@@ -187,9 +184,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A905C4672F10194900587825 /* PersonFormView.swift in Sources */,
 				A9E25D252EC0C8C1004C9397 /* Person.swift in Sources */,
-				A9E25D272EC0C8C1004C9397 /* Add.swift in Sources */,
-				A9E25D2A2EC0C8C1004C9397 /* DetailView.swift in Sources */,
 				A905C42B2F095BB100587825 /* AddCategory.swift in Sources */,
 				A9E25D2C2EC0C8C1004C9397 /* Home.swift in Sources */,
 				A9E25D3B2EC0C983004C9397 /* hitokanriApp.swift in Sources */,
@@ -346,7 +342,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.phihash.hitolog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -389,7 +385,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.4.0;
+				MARKETING_VERSION = 1.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.phihash.hitolog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;

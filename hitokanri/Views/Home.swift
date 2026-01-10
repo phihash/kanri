@@ -31,7 +31,7 @@ struct Home: View {
                     } else{
                         LazyVGrid(columns:Array(repeating: .init(.flexible(minimum: 10, maximum: 300)), count: 2)){
                             ForEach(displayPersons){ person in
-                                NavigationLink(destination:DetailView(person: person)){
+                                NavigationLink(destination:PersonFormView(person: person)){
                                     ListSection(person: person)
                                 }
                             }
@@ -52,6 +52,13 @@ struct Home: View {
                     }
                     ToolbarItem(placement: .topBarTrailing) {
                         HStack {
+                            Button {
+                                exportAllToCSV()
+                            } label : {
+                                Image(systemName:"square.and.arrow.up")
+                                    .foregroundStyle(.black)
+                            }
+                            
                             Button {
                                 isSorted.toggle()
                             } label : {
@@ -79,7 +86,53 @@ struct Home: View {
                 .padding(.bottom,32)
             }
             .fullScreenCover(isPresented: $addPerson){
-                Add(addPerson:$addPerson)
+                PersonFormView()
+            }
+        }
+    }
+    
+    func exportAllToCSV(){
+        let headers = ["名前", "関係性", "住所", "職業", "出身地", "X(Twitter)", "Instagram", "お気に入り"]
+        let headerLine = headers.joined(separator: ",")
+        
+        var csvLines = [headerLine]
+        
+        for person in displayPersons {
+            let values = [
+                person.name,
+                person.relationship ?? "",
+                person.address ?? "",
+                person.occupation ?? "",
+                person.birthplace ?? "",
+                person.twitterID ?? "",
+                person.instagramID ?? "",
+                person.favorite ? "はい" : "いいえ"
+            ]
+            let valueLine = values.map{"\"\($0)\""}.joined(separator: ",")
+            csvLines.append(valueLine)
+        }
+        
+        let csvString = csvLines.joined(separator: "\n")
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd_HH-mm-ss"
+        let fileName = "全員のプロフィール_\(dateFormatter.string(from: Date())).csv"
+        
+        if let documentsPath = FileManager.default.urls(for:.documentDirectory, in:.userDomainMask).first{
+            let fileURL = documentsPath.appendingPathComponent(fileName)
+            do {
+                try csvString.write(to: fileURL, atomically: true, encoding: .utf8)
+                let activityVC = UIActivityViewController(
+                    activityItems: [fileURL],
+                    applicationActivities: nil
+                )
+                
+                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                   let window = windowScene.windows.first {
+                    window.rootViewController?.present(activityVC, animated: true)
+                }
+            } catch {
+                print("CSV出力エラー")
             }
         }
     }
