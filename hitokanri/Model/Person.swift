@@ -9,6 +9,9 @@ class Person{
          occupation: String? = nil,
          birthplace: String? = nil,
          bloodType : String? = nil,
+         phoneNumber: String? = nil,
+         email: String? = nil,
+         notes: String? = nil,
          twitterID: String? = nil,
          instagramID: String? = nil,
          favorite: Bool = false){
@@ -24,6 +27,15 @@ class Person{
         }
         if let birthplace = birthplace {
             self.birthplace = birthplace
+        }
+        if let phoneNumber = phoneNumber {
+            self.phoneNumber = phoneNumber
+        }
+        if let email = email {
+            self.email = email
+        }
+        if let notes = notes {
+            self.notes = notes
         }
         if let twitterID = twitterID {
             self.twitterID = twitterID
@@ -41,25 +53,16 @@ class Person{
     var address: String?                // 住所
     var occupation: String?             // 職業
     var favorite: Bool = false
-    
-    //    var genderStyle: String?            // 性別・ジェンダースタイル・未設定可
-    //    var birthday: Date?                 // 誕生日
-    
+  
     var birthplace: String?             // 出身地
-    //
-    //    // 連絡先
-    //    var phoneNumber: String?
-    //    var email: String?
-    //
+    
+    // 連絡先
+    var phoneNumber: String?
+    var email: String?
+    var notes: String?                  // 備考・メモ
+    
     // SNS
     var twitterID: String?
     var instagramID: String?
     
-    //    // その他
-    //    var notes: String?                  // 備考・メモ
-    //
-    // お気に入り
-    
-    //    // 将来的拡張用
-    //    var tags: [String]?                 // カスタムタグ・分類
 }

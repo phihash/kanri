@@ -34,6 +34,14 @@
 		A9E25D462EC0CB32004C9397 /* hito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hito.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A90D42C82F226B47007A05D1 /* components */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = components;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		A9586A522EA2967F00CEDEC2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -94,6 +102,7 @@
 		A9E25D3F2EC0C9AE004C9397 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A90D42C82F226B47007A05D1 /* components */,
 				A905C4662F10194900587825 /* PersonFormView.swift */,
 				A9E25D1E2EC0C8C1004C9397 /* Home.swift */,
 				A9E25D1F2EC0C8C1004C9397 /* MailView.swift */,
@@ -125,6 +134,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A90D42C82F226B47007A05D1 /* components */,
 			);
 			name = hitokanri;
 			packageProductDependencies = (

@@ -19,15 +19,7 @@ struct Home: View {
             ZStack{
                 ScrollView(showsIndicators: false){
                     if persons.isEmpty {
-                        VStack(spacing: 16){
-                            Image(systemName: "person.slash")
-                                .font(.system(size: 60))
-                                .foregroundColor(.gray)
-                            Text("データがありません")
-                                .font(.title3)
-                        }
-                        .padding(.top, 200)
-                        
+                        EmptyDataStateView()
                     } else{
                         LazyVGrid(columns:Array(repeating: .init(.flexible(minimum: 10, maximum: 300)), count: 2)){
                             ForEach(displayPersons){ person in
@@ -92,7 +84,7 @@ struct Home: View {
     }
     
     func exportAllToCSV(){
-        let headers = ["名前", "関係性", "住所", "職業", "出身地", "X(Twitter)", "Instagram", "お気に入り"]
+        let headers = ["名前", "関係性", "住所", "職業", "出身地", "電話番号", "メールアドレス", "備考・メモ", "X(Twitter)", "Instagram", "お気に入り"]
         let headerLine = headers.joined(separator: ",")
         
         var csvLines = [headerLine]
@@ -104,6 +96,9 @@ struct Home: View {
                 person.address ?? "",
                 person.occupation ?? "",
                 person.birthplace ?? "",
+                person.phoneNumber ?? "",
+                person.email ?? "",
+                person.notes ?? "",
                 person.twitterID ?? "",
                 person.instagramID ?? "",
                 person.favorite ? "はい" : "いいえ"
