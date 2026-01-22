@@ -40,6 +40,11 @@
 			path = components;
 			sourceTree = "<group>";
 		};
+		A90D42CE2F227FBE007A05D1 /* Utils */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +85,7 @@
 		A9E25D242EC0C8C1004C9397 /* hitokanri */ = {
 			isa = PBXGroup;
 			children = (
+				A90D42CE2F227FBE007A05D1 /* Utils */,
 				A9E25D3A2EC0C983004C9397 /* Apps */,
 				A9E25D3F2EC0C9AE004C9397 /* Views */,
 				A9E25D132EC0C8C1004C9397 /* Model */,
@@ -137,6 +143,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				A90D42C82F226B47007A05D1 /* components */,
+				A90D42CE2F227FBE007A05D1 /* Utils */,
 			);
 			name = hitokanri;
 			packageProductDependencies = (
