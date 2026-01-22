@@ -21,15 +21,8 @@ struct Home: View {
                     if persons.isEmpty {
                         EmptyDataStateView()
                     } else{
-                        LazyVGrid(columns:Array(repeating: .init(.flexible(minimum: 10, maximum: 300)), count: 2)){
-                            ForEach(displayPersons){ person in
-                                NavigationLink(destination:PersonFormView(person: person)){
-                                    ListSection(person: person)
-                                }
-                            }
-                        }
+                        PersonGridView(persons: displayPersons)
                     }
-                    
                 }
                 .padding(.bottom,48)
                 .toolbar{
