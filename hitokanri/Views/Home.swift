@@ -30,32 +30,12 @@ struct Home: View {
             ZStack{
                 VStack(spacing: 0){
                     HStack{
-                        Button {
+                        TabButton(title: "すべて", isSelected: selectTab == .all) {
                             selectTab = .all
-                        } label: {
-                            VStack(spacing: 8) {
-                                Text("すべて")
-                                    .font(.system(size: 16, weight: selectTab == .all ? .semibold : .regular))
-                                    .foregroundColor(selectTab == .all ? .black : .gray)
-
-                                Rectangle()
-                                    .fill(selectTab == .all ? Color.accentColor : Color.clear)
-                                    .frame(height: 2)
-                            }
                         }
 
-                        Button {
+                        TabButton(title: "お気に入り", isSelected: selectTab == .favorite) {
                             selectTab = .favorite
-                        } label: {
-                            VStack(spacing: 8) {
-                                Text("お気に入り")
-                                    .font(.system(size: 16, weight: selectTab == .favorite ? .semibold : .regular))
-                                    .foregroundColor(selectTab == .favorite ? .black : .gray)
-
-                                Rectangle()
-                                    .fill(selectTab == .favorite ? Color.accentColor : Color.clear)
-                                    .frame(height: 2)
-                            }
                         }
 
                         Spacer()
