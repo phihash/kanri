@@ -8,7 +8,7 @@ struct hitokanriApp: App {
     @State private var isAuthenticated = false
     @State private var isAuthenticating = false
     
-  
+    
     private func authenticate() {
         let context = LAContext()
         let reason = "アプリにアクセスするためにパスコードが必要です"
@@ -26,14 +26,11 @@ struct hitokanriApp: App {
             if isPasscodeEnabled && !isAuthenticated{
                 Text("パスコードが必要です")
                     .onAppear{
-                        
                         authenticate()
-                        
                     }
             }else{
                 Home()
                     .modelContainer(for: Person.self)
-                
             }
             
         }

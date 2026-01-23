@@ -18,7 +18,7 @@ struct Home: View {
         if selectTab == .favorite {
             filtered = filtered.filter { $0.favorite }
         }
-
+        
         if isSorted {
             return filtered.sorted { $0.name < $1.name }
         } else {
@@ -33,16 +33,16 @@ struct Home: View {
                         TabButton(title: "すべて", isSelected: selectTab == .all) {
                             selectTab = .all
                         }
-
+                        
                         TabButton(title: "お気に入り", isSelected: selectTab == .favorite) {
                             selectTab = .favorite
                         }
-
+                        
                         Spacer()
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 12)
-
+                    
                     TabView(selection: $selectTab) {
                         ScrollView(showsIndicators: false){
                             if persons.isEmpty {
@@ -53,7 +53,7 @@ struct Home: View {
                             }
                         }
                         .tag(TabType.all)
-
+                        
                         ScrollView(showsIndicators: false){
                             let favoritePersons = persons.filter { $0.favorite }
                             if favoritePersons.isEmpty {
@@ -68,30 +68,10 @@ struct Home: View {
                     .tabViewStyle(.page(indexDisplayMode: .never))
                     .toolbar{
                         ToolbarItem(placement: .topBarTrailing) {
-                            HStack(spacing: 20) {
-                                Button {
-                                    CSVExporter.exportPersonsToCSV(displayPersons)
-                                } label : {
-                                    Image(systemName:"square.and.arrow.up")
-                                        .foregroundStyle(.black)
-                                }
-                                
-                                Button {
-                                    isSorted.toggle()
-                                } label : {
-                                    Image("sort")
-                                        .foregroundColor(isSorted ? .accentColor : .primary)
-                                }
-                                
-                                NavigationLink(destination:SettingsView()){
-                                    Image("settings")
-                                        .foregroundColor(.black)
-                                }
-                            }
+                            HomeToolbarButtons(persons: displayPersons, isSorted: $isSorted)
                         }
                     }
                 }
-        
                 
                 Button{
                     addPerson = true
