@@ -16,11 +16,10 @@ struct PersonListTabContent: View {
     var body: some View {
         ScrollView(showsIndicators: false){
             if persons.isEmpty {
-                if let emptyMessage = emptyMessage, let emptyIconName = emptyIconName {
-                    EmptyDataStateView(message: emptyMessage, iconName: emptyIconName)
-                } else {
-                    EmptyDataStateView()
-                }
+                EmptyDataStateView(
+                    message: emptyMessage ?? "データがありません",
+                    iconName: emptyIconName ?? "person.slash"
+                )
             } else {
                 let filtered = isSorted ? persons.sorted { $0.name < $1.name } : persons
                 PersonGridView(persons: filtered)
