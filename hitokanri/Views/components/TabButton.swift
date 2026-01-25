@@ -18,6 +18,8 @@ struct TabButton: View {
                     .fill(isSelected ? Color.accentColor : Color.clear)
                     .frame(height: 2)
             }
+            .padding(.horizontal, 4)
+            .fixedSize()
         }
     }
 }

@@ -29,40 +29,21 @@ struct Home: View {
         NavigationStack{
             ZStack{
                 VStack(spacing: 0){
-                    HStack{
-                        TabButton(title: "すべて", isSelected: selectTab == .all) {
-                            selectTab = .all
-                        }
-                        
-                        TabButton(title: "お気に入り", isSelected: selectTab == .favorite) {
-                            selectTab = .favorite
-                        }
-                        
-                        Spacer()
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 12)
-                    
+                    TabBar(selectedTab: $selectTab, tabs: [
+                        ("すべて", TabType.all),
+                        ("お気に入り", TabType.favorite)
+                    ])
+
                     TabView(selection: $selectTab) {
-                        ScrollView(showsIndicators: false){
-                            if persons.isEmpty {
-                                EmptyDataStateView()
-                            } else {
-                                let filtered = isSorted ? persons.sorted { $0.name < $1.name } : persons
-                                PersonGridView(persons: filtered)
-                            }
-                        }
-                        .tag(TabType.all)
-                        
-                        ScrollView(showsIndicators: false){
-                            let favoritePersons = persons.filter { $0.favorite }
-                            if favoritePersons.isEmpty {
-                                EmptyDataStateView(message: "お気に入りがありません", iconName: "star.slash")
-                            } else {
-                                let filtered = isSorted ? favoritePersons.sorted { $0.name < $1.name } : favoritePersons
-                                PersonGridView(persons: filtered)
-                            }
-                        }
+                        PersonListTabContent(persons: persons, isSorted: isSorted)
+                            .tag(TabType.all)
+
+                        PersonListTabContent(
+                            persons: persons.filter { $0.favorite },
+                            isSorted: isSorted,
+                            emptyMessage: "お気に入りがありません",
+                            emptyIconName: "star.slash"
+                        )
                         .tag(TabType.favorite)
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
@@ -72,22 +53,10 @@ struct Home: View {
                         }
                     }
                 }
-                
-                Button{
+
+                FloatingActionButton(iconName: "add", backgroundColor: .black) {
                     addPerson = true
-                } label:{
-                    Circle().fill(.green)
-                        .frame(width: 64,height: 64)
-                        .overlay{
-                            Image("add")
-                                .renderingMode(.template)
-                                .foregroundStyle(.white)
-                        }
-                    
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-                .padding(.trailing,30)
-                .padding(.bottom,32)
             }
             .fullScreenCover(isPresented: $addPerson){
                 PersonFormView()
