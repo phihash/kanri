@@ -4,13 +4,13 @@ struct PersonGridView: View {
     let persons: [Person]
 
     var body: some View {
-        LazyVGrid(columns:Array(repeating: .init(.flexible(minimum: 10, maximum: 300)), count: 2)){
+        LazyVGrid(columns: [GridItem(.flexible())], spacing: 12){
             ForEach(persons){ person in
                 NavigationLink(destination:PersonFormView(person: person)){
                     ListSection(person: person)
                 }
             }
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, 12)
     }
 }
