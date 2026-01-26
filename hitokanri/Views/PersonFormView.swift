@@ -186,6 +186,13 @@ struct PersonFormView: View {
                                 .fontWeight(.semibold)
                         }
                     }
+                    .onChange(of: favorite) { oldValue, newValue in
+                        // 編集中の場合は即座に保存
+                        if let person = editingPerson {
+                            person.favorite = newValue
+                            try? modelContext.save()
+                        }
+                    }
                     Spacer()
                 }
                 .padding(.horizontal, 16)

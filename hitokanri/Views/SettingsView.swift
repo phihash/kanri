@@ -86,20 +86,13 @@ struct SettingsView: View {
                 
                 Section{
                     
-                    Button{
-                        if MailView.canSendMail() {
-                            isShowMailView = true
-                        } else {
-                            // MailViewを表示できない
-                        }
-                    } label : {
-                        HStack(spacing: 18){
-                            Image(systemName: "mail")
-                            Text("問い合わせ")
-                        }
-                        .padding(.vertical,6)
+                    HStack(spacing: 18){
+                        Image(systemName: "mail")
+                        Link("匿名でお問い合わせ",destination: URL(string: "https://forms.gle/94qm6BpGY3fU3aB88")!)
+                            .foregroundStyle(.primary)
                     }
-                    .foregroundStyle(.primary)
+                    .padding(.vertical,6)
+             
                 } header : {
                     Text("問い合わせ")
                         .font(.title3)
