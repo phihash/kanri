@@ -25,6 +25,7 @@
 		A9E25D472EC0CB32004C9397 /* hito.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D462EC0CB32004C9397 /* hito.png */; };
 		A9E840AD2F5EF5C9007E4435 /* BottomActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E840AC2F5EF5C9007E4435 /* BottomActionBar.swift */; };
 		A9E840AF2F5EF99B007E4435 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E840AE2F5EF99B007E4435 /* Header.swift */; };
+		A9E840B12F5EFD73007E4435 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E840B02F5EFD73007E4435 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		A9E25D462EC0CB32004C9397 /* hito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hito.png; sourceTree = "<group>"; };
 		A9E840AC2F5EF5C9007E4435 /* BottomActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBar.swift; sourceTree = "<group>"; };
 		A9E840AE2F5EF99B007E4435 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		A9E840B02F5EFD73007E4435 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -80,6 +82,7 @@
 				A90D42DE2F267497007A05D1 /* PersonGridView.swift */,
 				A90D42DD2F267497007A05D1 /* ListSection.swift */,
 				A9E840AE2F5EF99B007E4435 /* Header.swift */,
+				A9E840B02F5EFD73007E4435 /* SearchBar.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				A90D42E72F267497007A05D1 /* PersonGridView.swift in Sources */,
 				A90D42E82F267497007A05D1 /* PersonListTabContent.swift in Sources */,
 				A90D42E92F267497007A05D1 /* TabBar.swift in Sources */,
+				A9E840B12F5EFD73007E4435 /* SearchBar.swift in Sources */,
 				A9E840AD2F5EF5C9007E4435 /* BottomActionBar.swift in Sources */,
 				A90D42EA2F267497007A05D1 /* TabButton.swift in Sources */,
 			);

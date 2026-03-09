@@ -5,21 +5,18 @@ struct Header: View {
 
     var body: some View {
         HStack {
-            // 設定ボタン（左端）
             NavigationLink(destination: SettingsView()) {
                 Image("settings")
                     .foregroundColor(.black)
                     .frame(width: 44, height: 44)
             }
 
-            Spacer()
-
             Text("さがす")
-                .font(Font.largeTitle)
+                .fontWeight(.bold)
+                .font(.title)
 
             Spacer()
 
-            // 共有ボタン（右端）
             Button {
                 CSVExporter.exportPersonsToCSV(persons)
             } label: {

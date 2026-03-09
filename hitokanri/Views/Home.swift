@@ -29,6 +29,7 @@ struct Home: View {
         NavigationStack{
             VStack(spacing: 0){
                 Header(persons: displayPersons)
+                SearchBar()
                 TabBar(selectedTab: $selectTab, tabs: [
                     ("すべて", TabType.all),
                     ("お気に入り", TabType.favorite)
@@ -51,7 +52,6 @@ struct Home: View {
                 Spacer()
 
                 BottomActionBar(
-                    isSorted: $isSorted,
                     onAddPerson: {
                         addPerson = true
                     }
