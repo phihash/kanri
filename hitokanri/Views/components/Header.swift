@@ -13,7 +13,7 @@ struct Header: View {
 
             Text("さがす")
                 .fontWeight(.bold)
-                .font(.title)
+                .font(.title2)
 
             Spacer()
 

@@ -3,7 +3,6 @@ import StoreKit
 
 struct SettingsView: View {
     @Environment(\.requestReview) private var requestReview
-    @State var isShowMailView = false
     @AppStorage("isPasscodeEnabled") private var isPasscodeEnabled = false
     var body: some View {
         NavigationStack{
@@ -88,7 +87,7 @@ struct SettingsView: View {
                     
                     HStack(spacing: 18){
                         Image(systemName: "mail")
-                        Link("匿名でお問い合わせ",destination: URL(string: "https://forms.gle/94qm6BpGY3fU3aB88")!)
+                        Link("匿名でお問い合わせ",destination: URL(string: "https://forms.gle/QXGBLSkKxgPpZyhYA")!)
                             .foregroundStyle(.primary)
                     }
                     .padding(.vertical,6)
@@ -100,15 +99,7 @@ struct SettingsView: View {
                         .fontWeight(.bold)
                         .padding(.bottom,12)
                 }
-                
-            }
-            .sheet(isPresented: $isShowMailView) {
-                MailView(
-                    address: ["610g0531@gmail.com"],
-                    subject: "問い合わせ",
-                    body: "\n\n----\n不具合の検証に利用させていただきます。 \nApp: \(Bundle.main.appName)\n                    Version:  (\(Bundle.main.appVersion))   \n                     iOS: \(UIDevice.current.systemVersion)   \n"
-                )
-                .edgesIgnoringSafeArea(.all)
+
             }
             .navigationTitle("設定")
             .navigationBarTitleDisplayMode(.inline)

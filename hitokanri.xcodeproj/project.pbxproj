@@ -17,7 +17,6 @@
 		A90D42EA2F267497007A05D1 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D42E12F267497007A05D1 /* TabButton.swift */; };
 		A9E25D252EC0C8C1004C9397 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D112EC0C8C1004C9397 /* Person.swift */; };
 		A9E25D2C2EC0C8C1004C9397 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D1E2EC0C8C1004C9397 /* Home.swift */; };
-		A9E25D2D2EC0C8C1004C9397 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D1F2EC0C8C1004C9397 /* MailView.swift */; };
 		A9E25D2E2EC0C8C1004C9397 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D202EC0C8C1004C9397 /* SettingsView.swift */; };
 		A9E25D2F2EC0C8C1004C9397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D152EC0C8C1004C9397 /* Assets.xcassets */; };
 		A9E25D3B2EC0C983004C9397 /* hitokanriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D392EC0C983004C9397 /* hitokanriApp.swift */; };
@@ -42,7 +41,6 @@
 		A9E25D152EC0C8C1004C9397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9E25D1C2EC0C8C1004C9397 /* hitokanri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hitokanri.entitlements; sourceTree = "<group>"; };
 		A9E25D1E2EC0C8C1004C9397 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		A9E25D1F2EC0C8C1004C9397 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		A9E25D202EC0C8C1004C9397 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A9E25D392EC0C983004C9397 /* hitokanriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitokanriApp.swift; sourceTree = "<group>"; };
 		A9E25D432EC0CA4B004C9397 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 				A90D42E22F267497007A05D1 /* components */,
 				A905C4662F10194900587825 /* PersonFormView.swift */,
 				A9E25D1E2EC0C8C1004C9397 /* Home.swift */,
-				A9E25D1F2EC0C8C1004C9397 /* MailView.swift */,
 				A9E25D202EC0C8C1004C9397 /* SettingsView.swift */,
 				A905C42A2F095BB100587825 /* AddCategory.swift */,
 			);
@@ -237,7 +234,6 @@
 				A905C42B2F095BB100587825 /* AddCategory.swift in Sources */,
 				A9E25D2C2EC0C8C1004C9397 /* Home.swift in Sources */,
 				A9E25D3B2EC0C983004C9397 /* hitokanriApp.swift in Sources */,
-				A9E25D2D2EC0C8C1004C9397 /* MailView.swift in Sources */,
 				A9E25D2E2EC0C8C1004C9397 /* SettingsView.swift in Sources */,
 				A90D42E32F267497007A05D1 /* EmptyDataStateView.swift in Sources */,
 				A90D42E62F267497007A05D1 /* ListSection.swift in Sources */,

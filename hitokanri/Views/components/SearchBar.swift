@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SearchBar: View {
-    @State private var searchText = ""
+    @Binding var searchText: String
 
     var body: some View {
         HStack(spacing: 12) {
