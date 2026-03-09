@@ -14,7 +14,7 @@ struct SettingsView: View {
                             Text("現在のバージョン")
                         }
                         Spacer()
-                        Text(Bundle.main.appVersion)
+                        Text(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "バージョンを取得できませんでした")
                     }
                     .foregroundStyle(.primary)
                     .padding(.vertical,6)

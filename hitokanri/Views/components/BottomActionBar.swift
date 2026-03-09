@@ -15,8 +15,8 @@ struct BottomActionBar: View {
                     .foregroundStyle(.black)
                     .frame(width: 44, height: 44)
             }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 10)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 12)
             .background(
                 Capsule()
                     .fill(Color(UIColor.systemGray6))
