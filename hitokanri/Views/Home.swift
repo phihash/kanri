@@ -27,36 +27,35 @@ struct Home: View {
     }
     var body: some View {
         NavigationStack{
-            ZStack{
-                VStack(spacing: 0){
-                    TabBar(selectedTab: $selectTab, tabs: [
-                        ("すべて", TabType.all),
-                        ("お気に入り", TabType.favorite)
-                    ])
+            VStack(spacing: 0){
+                TabBar(selectedTab: $selectTab, tabs: [
+                    ("すべて", TabType.all),
+                    ("お気に入り", TabType.favorite)
+                ])
 
-                    TabView(selection: $selectTab) {
-                        PersonListTabContent(persons: persons, isSorted: isSorted)
-                            .tag(TabType.all)
+                TabView(selection: $selectTab) {
+                    PersonListTabContent(persons: persons, isSorted: isSorted)
+                        .tag(TabType.all)
 
-                        PersonListTabContent(
-                            persons: persons.filter { $0.favorite },
-                            isSorted: isSorted,
-                            emptyMessage: "お気に入りがありません",
-                            emptyIconName: "star.slash"
-                        )
-                        .tag(TabType.favorite)
-                    }
-                    .tabViewStyle(.page(indexDisplayMode: .never))
-                    .toolbar{
-                        ToolbarItem(placement: .topBarTrailing) {
-                            HomeToolbarButtons(persons: displayPersons, isSorted: $isSorted)
-                        }
-                    }
+                    PersonListTabContent(
+                        persons: persons.filter { $0.favorite },
+                        isSorted: isSorted,
+                        emptyMessage: "お気に入りがありません",
+                        emptyIconName: "star.slash"
+                    )
+                    .tag(TabType.favorite)
                 }
+                .tabViewStyle(.page(indexDisplayMode: .never))
 
-                FloatingActionButton(iconName: "add", backgroundColor: .black) {
-                    addPerson = true
-                }
+                Spacer()
+
+                BottomActionBar(
+                    persons: displayPersons,
+                    isSorted: $isSorted,
+                    onAddPerson: {
+                        addPerson = true
+                    }
+                )
             }
             .fullScreenCover(isPresented: $addPerson){
                 PersonFormView()

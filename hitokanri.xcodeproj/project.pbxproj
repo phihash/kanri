@@ -10,8 +10,6 @@
 		A905C42B2F095BB100587825 /* AddCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A905C42A2F095BB100587825 /* AddCategory.swift */; };
 		A905C4672F10194900587825 /* PersonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A905C4662F10194900587825 /* PersonFormView.swift */; };
 		A90D42E32F267497007A05D1 /* EmptyDataStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D42DA2F267497007A05D1 /* EmptyDataStateView.swift */; };
-		A90D42E42F267497007A05D1 /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D42DB2F267497007A05D1 /* FloatingActionButton.swift */; };
-		A90D42E52F267497007A05D1 /* HomeToolbarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D42DC2F267497007A05D1 /* HomeToolbarButtons.swift */; };
 		A90D42E62F267497007A05D1 /* ListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D42DD2F267497007A05D1 /* ListSection.swift */; };
 		A90D42E72F267497007A05D1 /* PersonGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D42DE2F267497007A05D1 /* PersonGridView.swift */; };
 		A90D42E82F267497007A05D1 /* PersonListTabContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D42DF2F267497007A05D1 /* PersonListTabContent.swift */; };
@@ -25,14 +23,13 @@
 		A9E25D3B2EC0C983004C9397 /* hitokanriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D392EC0C983004C9397 /* hitokanriApp.swift */; };
 		A9E25D452EC0CA4B004C9397 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D432EC0CA4B004C9397 /* LaunchScreen.storyboard */; };
 		A9E25D472EC0CB32004C9397 /* hito.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D462EC0CB32004C9397 /* hito.png */; };
+		A9E840AD2F5EF5C9007E4435 /* BottomActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E840AC2F5EF5C9007E4435 /* BottomActionBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A905C42A2F095BB100587825 /* AddCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategory.swift; sourceTree = "<group>"; };
 		A905C4662F10194900587825 /* PersonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonFormView.swift; sourceTree = "<group>"; };
 		A90D42DA2F267497007A05D1 /* EmptyDataStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataStateView.swift; sourceTree = "<group>"; };
-		A90D42DB2F267497007A05D1 /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
-		A90D42DC2F267497007A05D1 /* HomeToolbarButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeToolbarButtons.swift; sourceTree = "<group>"; };
 		A90D42DD2F267497007A05D1 /* ListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSection.swift; sourceTree = "<group>"; };
 		A90D42DE2F267497007A05D1 /* PersonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonGridView.swift; sourceTree = "<group>"; };
 		A90D42DF2F267497007A05D1 /* PersonListTabContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListTabContent.swift; sourceTree = "<group>"; };
@@ -48,6 +45,7 @@
 		A9E25D392EC0C983004C9397 /* hitokanriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitokanriApp.swift; sourceTree = "<group>"; };
 		A9E25D432EC0CA4B004C9397 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9E25D462EC0CB32004C9397 /* hito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hito.png; sourceTree = "<group>"; };
+		A9E840AC2F5EF5C9007E4435 /* BottomActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -72,14 +70,13 @@
 		A90D42E22F267497007A05D1 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				A9E840AC2F5EF5C9007E4435 /* BottomActionBar.swift */,
 				A90D42DA2F267497007A05D1 /* EmptyDataStateView.swift */,
 				A90D42E02F267497007A05D1 /* TabBar.swift */,
 				A90D42E12F267497007A05D1 /* TabButton.swift */,
-				A90D42DC2F267497007A05D1 /* HomeToolbarButtons.swift */,
 				A90D42DF2F267497007A05D1 /* PersonListTabContent.swift */,
 				A90D42DE2F267497007A05D1 /* PersonGridView.swift */,
 				A90D42DD2F267497007A05D1 /* ListSection.swift */,
-				A90D42DB2F267497007A05D1 /* FloatingActionButton.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -236,12 +233,11 @@
 				A9E25D2D2EC0C8C1004C9397 /* MailView.swift in Sources */,
 				A9E25D2E2EC0C8C1004C9397 /* SettingsView.swift in Sources */,
 				A90D42E32F267497007A05D1 /* EmptyDataStateView.swift in Sources */,
-				A90D42E42F267497007A05D1 /* FloatingActionButton.swift in Sources */,
-				A90D42E52F267497007A05D1 /* HomeToolbarButtons.swift in Sources */,
 				A90D42E62F267497007A05D1 /* ListSection.swift in Sources */,
 				A90D42E72F267497007A05D1 /* PersonGridView.swift in Sources */,
 				A90D42E82F267497007A05D1 /* PersonListTabContent.swift in Sources */,
 				A90D42E92F267497007A05D1 /* TabBar.swift in Sources */,
+				A9E840AD2F5EF5C9007E4435 /* BottomActionBar.swift in Sources */,
 				A90D42EA2F267497007A05D1 /* TabButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
