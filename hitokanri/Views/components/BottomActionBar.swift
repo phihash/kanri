@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct BottomActionBar: View {
-    let persons: [Person]
     @Binding var isSorted: Bool
     let onAddPerson: () -> Void
 
@@ -23,22 +22,6 @@ struct BottomActionBar: View {
             } label: {
                 Image("sort")
                     .foregroundColor(isSorted ? .accentColor : .black)
-                    .frame(width: 44, height: 44)
-            }
-
-            // エクスポートボタン
-            Button {
-                CSVExporter.exportPersonsToCSV(persons)
-            } label: {
-                Image(systemName: "square.and.arrow.up")
-                    .foregroundStyle(.black)
-                    .frame(width: 44, height: 44)
-            }
-
-            // 設定ボタン
-            NavigationLink(destination: SettingsView()) {
-                Image("settings")
-                    .foregroundColor(.black)
                     .frame(width: 44, height: 44)
             }
         }

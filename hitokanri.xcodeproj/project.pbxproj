@@ -24,6 +24,7 @@
 		A9E25D452EC0CA4B004C9397 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D432EC0CA4B004C9397 /* LaunchScreen.storyboard */; };
 		A9E25D472EC0CB32004C9397 /* hito.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D462EC0CB32004C9397 /* hito.png */; };
 		A9E840AD2F5EF5C9007E4435 /* BottomActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E840AC2F5EF5C9007E4435 /* BottomActionBar.swift */; };
+		A9E840AF2F5EF99B007E4435 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E840AE2F5EF99B007E4435 /* Header.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A9E25D432EC0CA4B004C9397 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9E25D462EC0CB32004C9397 /* hito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hito.png; sourceTree = "<group>"; };
 		A9E840AC2F5EF5C9007E4435 /* BottomActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBar.swift; sourceTree = "<group>"; };
+		A9E840AE2F5EF99B007E4435 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -77,6 +79,7 @@
 				A90D42DF2F267497007A05D1 /* PersonListTabContent.swift */,
 				A90D42DE2F267497007A05D1 /* PersonGridView.swift */,
 				A90D42DD2F267497007A05D1 /* ListSection.swift */,
+				A9E840AE2F5EF99B007E4435 /* Header.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E840AF2F5EF99B007E4435 /* Header.swift in Sources */,
 				A905C4672F10194900587825 /* PersonFormView.swift in Sources */,
 				A9E25D252EC0C8C1004C9397 /* Person.swift in Sources */,
 				A905C42B2F095BB100587825 /* AddCategory.swift in Sources */,
