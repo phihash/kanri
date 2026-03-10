@@ -1,6 +1,25 @@
 import Foundation
 import SwiftData
 
+// SNS情報を管理する構造体
+struct SocialMedia: Codable, Identifiable {
+    var id = UUID()
+    var platformName: String  // SNS名（自由入力）
+    var username: String      // ユーザー名/ID
+
+    // よく使うSNSのプリセット（UI表示用）
+    static let commonPlatforms = [
+        "X (Twitter)",
+        "Instagram",
+        "Facebook",
+        "TikTok",
+        "LinkedIn",
+        "YouTube",
+        "Bluesky",
+        "Threads"
+    ]
+}
+
 @Model
 class Person{
     init(name: String,
@@ -61,8 +80,11 @@ class Person{
     var email: String?
     var notes: String?                  // 備考・メモ
     
-    // SNS
+    // SNS（旧）
     var twitterID: String?
     var instagramID: String?
-    
+
+    // SNS（新：配列で管理）
+    var socialMedias: [SocialMedia] = []
+
 }
