@@ -9,12 +9,6 @@
 /* Begin PBXBuildFile section */
 		A905C42B2F095BB100587825 /* AddCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A905C42A2F095BB100587825 /* AddCategory.swift */; };
 		A905C4672F10194900587825 /* PersonFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A905C4662F10194900587825 /* PersonFormView.swift */; };
-		A90D42E32F267497007A05D1 /* EmptyDataStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D42DA2F267497007A05D1 /* EmptyDataStateView.swift */; };
-		A90D42E62F267497007A05D1 /* ListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D42DD2F267497007A05D1 /* ListSection.swift */; };
-		A90D42E72F267497007A05D1 /* PersonGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D42DE2F267497007A05D1 /* PersonGridView.swift */; };
-		A90D42E82F267497007A05D1 /* PersonListTabContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D42DF2F267497007A05D1 /* PersonListTabContent.swift */; };
-		A90D42E92F267497007A05D1 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D42E02F267497007A05D1 /* TabBar.swift */; };
-		A90D42EA2F267497007A05D1 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90D42E12F267497007A05D1 /* TabButton.swift */; };
 		A9E25D252EC0C8C1004C9397 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D112EC0C8C1004C9397 /* Person.swift */; };
 		A9E25D2C2EC0C8C1004C9397 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D1E2EC0C8C1004C9397 /* Home.swift */; };
 		A9E25D2E2EC0C8C1004C9397 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D202EC0C8C1004C9397 /* SettingsView.swift */; };
@@ -22,20 +16,11 @@
 		A9E25D3B2EC0C983004C9397 /* hitokanriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E25D392EC0C983004C9397 /* hitokanriApp.swift */; };
 		A9E25D452EC0CA4B004C9397 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D432EC0CA4B004C9397 /* LaunchScreen.storyboard */; };
 		A9E25D472EC0CB32004C9397 /* hito.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E25D462EC0CB32004C9397 /* hito.png */; };
-		A9E840AD2F5EF5C9007E4435 /* BottomActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E840AC2F5EF5C9007E4435 /* BottomActionBar.swift */; };
-		A9E840AF2F5EF99B007E4435 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E840AE2F5EF99B007E4435 /* Header.swift */; };
-		A9E840B12F5EFD73007E4435 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E840B02F5EFD73007E4435 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A905C42A2F095BB100587825 /* AddCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategory.swift; sourceTree = "<group>"; };
 		A905C4662F10194900587825 /* PersonFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonFormView.swift; sourceTree = "<group>"; };
-		A90D42DA2F267497007A05D1 /* EmptyDataStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataStateView.swift; sourceTree = "<group>"; };
-		A90D42DD2F267497007A05D1 /* ListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSection.swift; sourceTree = "<group>"; };
-		A90D42DE2F267497007A05D1 /* PersonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonGridView.swift; sourceTree = "<group>"; };
-		A90D42DF2F267497007A05D1 /* PersonListTabContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListTabContent.swift; sourceTree = "<group>"; };
-		A90D42E02F267497007A05D1 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		A90D42E12F267497007A05D1 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		A9586A552EA2967F00CEDEC2 /* hitokanri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hitokanri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E25D112EC0C8C1004C9397 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		A9E25D152EC0C8C1004C9397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,15 +30,27 @@
 		A9E25D392EC0C983004C9397 /* hitokanriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitokanriApp.swift; sourceTree = "<group>"; };
 		A9E25D432EC0CA4B004C9397 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9E25D462EC0CB32004C9397 /* hito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hito.png; sourceTree = "<group>"; };
-		A9E840AC2F5EF5C9007E4435 /* BottomActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionBar.swift; sourceTree = "<group>"; };
-		A9E840AE2F5EF99B007E4435 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
-		A9E840B02F5EFD73007E4435 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A90D42CE2F227FBE007A05D1 /* Utils */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A9E840B32F606008007E4435 /* buttons */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = buttons;
+			sourceTree = "<group>";
+		};
+		A9E840B92F60601D007E4435 /* list */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = list;
+			sourceTree = "<group>";
+		};
+		A9E840C22F606026007E4435 /* bars */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = bars;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -72,15 +69,9 @@
 		A90D42E22F267497007A05D1 /* components */ = {
 			isa = PBXGroup;
 			children = (
-				A9E840AC2F5EF5C9007E4435 /* BottomActionBar.swift */,
-				A90D42DA2F267497007A05D1 /* EmptyDataStateView.swift */,
-				A90D42E02F267497007A05D1 /* TabBar.swift */,
-				A90D42E12F267497007A05D1 /* TabButton.swift */,
-				A90D42DF2F267497007A05D1 /* PersonListTabContent.swift */,
-				A90D42DE2F267497007A05D1 /* PersonGridView.swift */,
-				A90D42DD2F267497007A05D1 /* ListSection.swift */,
-				A9E840AE2F5EF99B007E4435 /* Header.swift */,
-				A9E840B02F5EFD73007E4435 /* SearchBar.swift */,
+				A9E840C22F606026007E4435 /* bars */,
+				A9E840B92F60601D007E4435 /* list */,
+				A9E840B32F606008007E4435 /* buttons */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -169,6 +160,9 @@
 			);
 			fileSystemSynchronizedGroups = (
 				A90D42CE2F227FBE007A05D1 /* Utils */,
+				A9E840B32F606008007E4435 /* buttons */,
+				A9E840B92F60601D007E4435 /* list */,
+				A9E840C22F606026007E4435 /* bars */,
 			);
 			name = hitokanri;
 			packageProductDependencies = (
@@ -228,21 +222,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9E840AF2F5EF99B007E4435 /* Header.swift in Sources */,
 				A905C4672F10194900587825 /* PersonFormView.swift in Sources */,
 				A9E25D252EC0C8C1004C9397 /* Person.swift in Sources */,
 				A905C42B2F095BB100587825 /* AddCategory.swift in Sources */,
 				A9E25D2C2EC0C8C1004C9397 /* Home.swift in Sources */,
 				A9E25D3B2EC0C983004C9397 /* hitokanriApp.swift in Sources */,
 				A9E25D2E2EC0C8C1004C9397 /* SettingsView.swift in Sources */,
-				A90D42E32F267497007A05D1 /* EmptyDataStateView.swift in Sources */,
-				A90D42E62F267497007A05D1 /* ListSection.swift in Sources */,
-				A90D42E72F267497007A05D1 /* PersonGridView.swift in Sources */,
-				A90D42E82F267497007A05D1 /* PersonListTabContent.swift in Sources */,
-				A90D42E92F267497007A05D1 /* TabBar.swift in Sources */,
-				A9E840B12F5EFD73007E4435 /* SearchBar.swift in Sources */,
-				A9E840AD2F5EF5C9007E4435 /* BottomActionBar.swift in Sources */,
-				A90D42EA2F267497007A05D1 /* TabButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
