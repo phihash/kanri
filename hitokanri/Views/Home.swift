@@ -2,7 +2,6 @@ import SwiftUI
 import SwiftData
 
 struct Home: View {
-    @State private var isSorted : Bool = false
     @State private var addPerson : Bool = false
     @State private var selectTab : TabType = .all
     @State private var searchText : String = ""
@@ -27,12 +26,7 @@ struct Home: View {
             filtered = filtered.filter { $0.favorite }
         }
 
-        // ソート
-        if isSorted {
-            return filtered.sorted { $0.name < $1.name }
-        } else {
-            return filtered
-        }
+        return filtered
     }
     var body: some View {
         NavigationStack{
@@ -45,12 +39,11 @@ struct Home: View {
                 ])
 
                 TabView(selection: $selectTab) {
-                    PersonListTabContent(persons: displayPersons, isSorted: isSorted)
+                    PersonListTabContent(persons: displayPersons)
                         .tag(TabType.all)
 
                     PersonListTabContent(
                         persons: displayPersons,
-                        isSorted: isSorted,
                         emptyMessage: "お気に入りがありません",
                         emptyIconName: "star.slash"
                     )
