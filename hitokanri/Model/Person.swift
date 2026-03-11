@@ -27,43 +27,21 @@ class Person{
          address: String? = nil,
          occupation: String? = nil,
          birthplace: String? = nil,
-         bloodType : String? = nil,
          phoneNumber: String? = nil,
          email: String? = nil,
          notes: String? = nil,
-         twitterID: String? = nil,
-         instagramID: String? = nil,
-         favorite: Bool = false){
+         favorite: Bool = false,
+         socialMedias: [SocialMedia] = []) {
         self.name = name
-        if let relationship = relationship {
-            self.relationship = relationship
-        }
-        if let address = address {
-            self.address = address
-        }
-        if let occupation = occupation {
-            self.occupation = occupation
-        }
-        if let birthplace = birthplace {
-            self.birthplace = birthplace
-        }
-        if let phoneNumber = phoneNumber {
-            self.phoneNumber = phoneNumber
-        }
-        if let email = email {
-            self.email = email
-        }
-        if let notes = notes {
-            self.notes = notes
-        }
-        if let twitterID = twitterID {
-            self.twitterID = twitterID
-        }
-        if let instagramID = instagramID {
-            self.instagramID = instagramID
-        }
-        
+        self.relationship = relationship
+        self.address = address
+        self.occupation = occupation
+        self.birthplace = birthplace
+        self.phoneNumber = phoneNumber
+        self.email = email
+        self.notes = notes
         self.favorite = favorite
+        self.socialMedias = socialMedias
     }
     
     // 基本情報（必須1つのみ）
@@ -79,12 +57,8 @@ class Person{
     var phoneNumber: String?
     var email: String?
     var notes: String?                  // 備考・メモ
-    
-    // SNS（旧）
-    var twitterID: String?
-    var instagramID: String?
 
-    // SNS（新：配列で管理）
+    // SNS
     var socialMedias: [SocialMedia] = []
 
 }
