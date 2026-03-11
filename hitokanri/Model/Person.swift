@@ -24,7 +24,6 @@ struct SocialMedia: Codable, Identifiable {
 class Person{
     init(name: String,
          relationship: String? = nil,
-         address: String? = nil,
          occupation: String? = nil,
          birthplace: String? = nil,
          phoneNumber: String? = nil,
@@ -34,7 +33,6 @@ class Person{
          socialMedias: [SocialMedia] = []) {
         self.name = name
         self.relationship = relationship
-        self.address = address
         self.occupation = occupation
         self.birthplace = birthplace
         self.phoneNumber = phoneNumber
@@ -47,10 +45,9 @@ class Person{
     // 基本情報（必須1つのみ）
     var name: String                     // 必須
     var relationship: String?           // 友人 / 家族 / 同僚 / 推し など自由入力
-    var address: String?                // 住所
     var occupation: String?             // 職業
     var favorite: Bool = false
-  
+
     var birthplace: String?             // 出身地
     
     // 連絡先

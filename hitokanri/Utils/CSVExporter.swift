@@ -3,23 +3,26 @@ import UIKit
 
 struct CSVExporter {
     static func exportPersonsToCSV(_ persons: [Person]) {
-        let headers = ["名前", "関係性", "住所", "職業", "出身地", "電話番号", "メールアドレス", "備考・メモ", "X(Twitter)", "Instagram", "お気に入り"]
+        let headers = ["名前", "関係性", "職業", "出身地", "電話番号", "メールアドレス", "備考・メモ", "SNS", "お気に入り"]
         let headerLine = headers.joined(separator: ",")
 
         var csvLines = [headerLine]
 
         for person in persons {
+            // SNS情報を1つの文字列にまとめる
+            let snsString = person.socialMedias
+                .map { "\($0.platformName): \($0.username)" }
+                .joined(separator: ", ")
+
             let values = [
                 person.name,
                 person.relationship ?? "",
-                person.address ?? "",
                 person.occupation ?? "",
                 person.birthplace ?? "",
                 person.phoneNumber ?? "",
                 person.email ?? "",
                 person.notes ?? "",
-                person.twitterID ?? "",
-                person.instagramID ?? "",
+                snsString,
                 person.favorite ? "はい" : "いいえ"
             ]
             let valueLine = values.map{"\"\($0)\""}.joined(separator: ",")
